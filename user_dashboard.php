@@ -19,7 +19,7 @@
             <li>DATABASES A-TO-Z</li>
             <li>HELP</li>
         </div>
-        <div style="display:flex;align-items:center;">
+        <div style="display:flex;gap:1rem;align-items:center;margin-right: 40px;">
             <li><img src="images/bell-ring.png" width="30px" style="margin-top: 5px;"></li>
             <li>07108487@dwc-legazpi.edu</li>
             <li><img src="images/next.png" width="20px"></li>
