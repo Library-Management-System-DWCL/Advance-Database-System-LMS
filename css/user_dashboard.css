@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #FFF;
+}
+.logo{
+    margin-left: 55px;
+    width: 105px;
+    height: 84px;
+}
+
+.header{
+    position: relative;
+    background: #F0ECE2;
+  }
+.navbar{
+    flex: 1;
+    text-align: right;
+    left: 500px;
+    position: absolute;
+    top: 20px;
+  }
+.navbar ul li{
+    display: inline-block;
+    list-style-type: none;
+    margin-right: 20px;
+    width: 50px;
+    color: #050505;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Jomolhari;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    }
+.navbar .em{
+    border: 1px solid;
+    padding-left: 100px;
+
+}
+li{
+    margin-left: 50px;
+}
+.navbar a{
+    text-decoration: none;
+     color: #fff;
+  }
+.emnotif{
+    left: 630px;
+    position: absolute;
+}
+.navbar .emlogo{
+    left: -438px;
+    position: absolute;
+}
+.navbar .email{
+    left: 750px;
+    position: absolute;
+}
+.navbar .next{
+    top:10px;
+    left: 830px;
+    position: absolute;
+}
