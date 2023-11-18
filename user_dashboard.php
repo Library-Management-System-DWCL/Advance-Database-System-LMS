@@ -16,8 +16,8 @@
                 <li>LIBRARY MANAGEMENT SYSTEM</li>
             </div>
         </div>
-        <div style="display:flex;gap:1rem;">
-            <li>LIBRARY HOMAPAGE</li>
+        <div class="logo2">
+            <li>LIBRARY HOMEPAGE</li>
             <li>DATABASES A-TO-Z</li>
             <li>HELP</li>
         </div>

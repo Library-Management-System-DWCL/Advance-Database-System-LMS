@@ -19,7 +19,23 @@ body{
     left: 122px;
     top: 5px;
 }
+.logo2{
+    display: flex;
 
+
+}
+.logo2 li {
+    border: 1px solid;
+    padding: 2rem;
+    border-bottom: 0;
+    border-top: 0;
+}
+.logo2 li:nth-child(1){
+    border-right: 0;
+}
+.logo2 li:nth-child(3){
+    border-left: 0;
+}
 .container{
     position: relative;
     background: #F0ECE2;
@@ -27,6 +43,7 @@ body{
     list-style: none;
     justify-content: space-between;
     align-items: center;
+    border: 1px solid;
   }
 .navbar{
     flex: 1;
