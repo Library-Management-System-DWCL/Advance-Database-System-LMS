@@ -11,8 +11,10 @@
 <body>
     <div class="container">
         <div class="logo">
-            <img src="images/logo2.png" width="90px">
-            <li>LIBRARY MANAGEMENT SYSTEM</li>
+            <div style="display: flex;align-items: center;">
+                <img src="images/logo2.png" width="90px">
+                <li>LIBRARY MANAGEMENT SYSTEM</li>
+            </div>
         </div>
         <div style="display:flex;gap:1rem;">
             <li>LIBRARY HOMAPAGE</li>
