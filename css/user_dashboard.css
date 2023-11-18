@@ -10,11 +10,17 @@ body{
     margin-left: 55px;
     width: 105px;
     height: 84px;
+    display: flex;
+    align-items: center;
 }
 
 .container{
     position: relative;
     background: #F0ECE2;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
   }
 .navbar{
     flex: 1;
