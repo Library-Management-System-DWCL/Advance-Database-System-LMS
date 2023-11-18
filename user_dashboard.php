@@ -14,7 +14,7 @@
             <img src="images/logo2.png" width="90px">
             <li>LIBRARY MANAGEMENT SYSTEM</li>
         </div>
-        <div style="display:flex;">
+        <div style="display:flex;gap:1rem;">
             <li>LIBRARY HOMAPAGE</li>
             <li>DATABASES A-TO-Z</li>
             <li>HELP</li>

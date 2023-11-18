@@ -13,6 +13,12 @@ body{
     display: flex;
     align-items: center;
 }
+.logo li {
+    position: absolute;
+    width: 115px;
+    left: 122px;
+    top: 5px;
+}
 
 .container{
     position: relative;
