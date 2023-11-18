@@ -8,7 +8,6 @@
 </head>
 <body>
     <div class="container">
-    <div class="header">
             <div class="logo">
                 <img src="images/logo2.png" width="90px" style="margin-top: 18px">
             </div>
@@ -23,7 +22,6 @@
                 <li class="next"><img src="images/next.png" width="20px"></li>
             </ul>
         </div>
-    </div>
     </div>
     
 </body>

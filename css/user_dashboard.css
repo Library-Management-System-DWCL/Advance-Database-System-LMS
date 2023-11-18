@@ -12,7 +12,7 @@ body{
     height: 84px;
 }
 
-.header{
+.container{
     position: relative;
     background: #F0ECE2;
   }
@@ -36,11 +36,10 @@ body{
     font-weight: 400;
     line-height: normal;
     }
-.navbar .em{
-    border: 1px solid;
-    padding-left: 100px;
+/* .navbar .em{
+ 
 
-}
+} */
 li{
     margin-left: 50px;
 }
