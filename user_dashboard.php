@@ -27,7 +27,19 @@
             <li><img src="images/next.png" width="20px"></li>
         </div>
     </div>
-
+    <div class="label">
+        <div class="text-wrapper">MY LIBRARY ACCOUNT</div>
+    </div>
+    <div class="box">
+        <div class="rectangle"></div>
+    </div>
+    <!-- <div class="box1">
+        <div class="tangle">
+            <div class="image">
+                <img class="stack-of-books" src="images/stack-of-books.png" />
+            </div>
+        </div>
+    </div> -->
 </body>
 
 </html>
