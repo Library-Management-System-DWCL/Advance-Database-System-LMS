@@ -95,11 +95,20 @@ ul li{
     line-height: normal;
     margin-top: 15%;
 }
-.log li{
+.log{
     display:flex;
-    gap:1rem;
+    gap:4rem;
     align-items:center;
-    margin-right: 40px;
+    margin-top: 4rem;
+    margin-right: 5rem;
+}
+.log li {
+    font-family: "Jomolhari-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
 }
 .box {
     width: 100%;
@@ -121,9 +130,17 @@ ul li{
     margin-top: 5%;
 }
 .cat .cat2{
-    display:flex;
     justify-content: space-evenly;
-    gap:5rem;
-    padding: 3rem;
+    padding: 2rem;
     border: 3px solid;
+}
+.cat2{
+    display:grid;
+    text-align: center;
+    font-family: "Jomolhari-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 40px;
+    letter-spacing: 0;
+    line-height: normal;
 }

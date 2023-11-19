@@ -44,10 +44,10 @@
     </div>
     <div class="cat">
         <div style="display:flex;justify-content: space-evenly;gap:5rem;padding: 2rem;">
-            <div class="cat2"><img src="images/stack-of-books.png" alt=""></div>
-            <div class="cat2"><img src="images/return_1.png" alt=""></div>
-            <div class="cat2"><img src="images/occupation.png" alt=""></div>
-            <div class="cat2"><img src="images/group.png" alt=""></div>
+            <div class="cat2"><img src="images/stack-of-books.png" alt="">10</div>
+            <div class="cat2"><img src="images/return_1.png" alt="">2</div>
+            <div class="cat2"><img src="images/occupation.png" alt="">50</div>
+            <div class="cat2"><img src="images/group.png" alt="">150</div>
         </div>
     </div>
 </body>
