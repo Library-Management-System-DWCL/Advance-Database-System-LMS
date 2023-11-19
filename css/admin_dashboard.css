@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #FFF;
+}
+.logo{
+    margin-left: 55px;
+    width: 105px;
+    height: 84px;
+    display: flex;
+    align-items: center;
+}
+.logo li {
+    position: absolute;
+    width: 115px;
+    left: 122px;
+    top: 5px;
+}
+.logo2{
+    display: flex;
+
+
+}
+.logo2 li {
+    border: 1px solid;
+    padding: 2rem;
+    border-bottom: 0;
+    border-top: 0;
+}
+.logo2 li:nth-child(1){
+    border-right: 0;
+}
+.logo2 li:nth-child(3){
+    border-left: 0;
+}
+.container{
+    position: relative;
+    background: #F0ECE2;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid;
+  }
+
+ul li{
+    display: inline-block;
+    list-style-type: none;
+    margin-right: 20px;
+    width: 50px;
+    color: #050505;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Jomolhari;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    }
+
+
+.container2{
+    position: relative;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+ul li{
+    display: inline-block;
+    list-style-type: none;
+    margin-right: 20px;
+    width: 50px;
+    color: #050505;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Jomolhari;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    }
+.admin li {
+    width: 424px;
+    position: relative;
+    margin-top: 5.375rem;
+    left: 45px;
+    font-family: "Jomolhari-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 32px;
+    letter-spacing: 0;
+}
+.log li{
+    display:flex;
+    gap:1rem;
+    align-items:center;
+    margin-right: 40px;
+}
