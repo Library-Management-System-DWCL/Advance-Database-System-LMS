@@ -33,6 +33,13 @@
     <div class="box">
         <div class="rectangle"></div>
     </div>
+    <div style="justify-content: center;display: flex;margin-top: 10%;">
+        <div style="display:flex;justify-content: space-evenly;gap:5rem;">
+            <div><img src="images/stack-of-books.png" alt=""></div>
+            <div><img src="images/return_1.png" alt=""></div>
+            <div><img src="images/wishlist_1.png" alt=""></div>
+        </div>
+    </div>
     <!-- <div class="box1">
         <div class="tangle">
             <div class="image">
