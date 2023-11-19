@@ -92,10 +92,38 @@ ul li{
     color: #000000;
     font-size: 32px;
     letter-spacing: 0;
+    line-height: normal;
+    margin-top: 15%;
 }
 .log li{
     display:flex;
     gap:1rem;
     align-items:center;
     margin-right: 40px;
+}
+.box {
+    width: 100%;
+    height: 14px;
+    display: flex;
+    justify-content: center;
+}
+
+.box .rectangle {
+    width: 90%;
+    height: 14px;
+    margin-top: 1rem;
+    left: 0;
+    background-color: #010190;
+}
+.cat{
+    justify-content: center;
+    display: flex;
+    margin-top: 5%;
+}
+.cat .cat2{
+    display:flex;
+    justify-content: space-evenly;
+    gap:5rem;
+    padding: 3rem;
+    border: 3px solid;
 }
