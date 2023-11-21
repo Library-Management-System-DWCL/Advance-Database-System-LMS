@@ -26,6 +26,7 @@
             <li><img src="images/next.png" width="20px"></li>
         </div>
     </div>
+    
 <div class="container2">
     <div class="admin">
             <div style="display: flex;align-items: center;">

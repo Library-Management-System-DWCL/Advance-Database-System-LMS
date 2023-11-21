@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 18, 2023 at 05:06 AM
+-- Generation Time: Nov 20, 2023 at 03:16 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -30,16 +30,20 @@ SET time_zone = "+00:00";
 CREATE TABLE `users` (
   `user_id` int(100) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `user_access` varchar(255) NOT NULL,
+  `password_strength` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `email`, `password`) VALUES
-(2, 'bosschan@gmail.com', '$2y$10$KE5/pip6AKwD77ZUXA7nvusNW7p.2WOBttbxlemAbHmsuGLA.gF7.'),
-(3, 'vee@gmail.com', '$2y$10$iokshrf2Lvs3gkRQl9z.gOvWxSkHn73w2/Wd7U2FLoorXz.Qzvu/K');
+INSERT INTO `users` (`user_id`, `email`, `password`, `user_access`, `password_strength`) VALUES
+(11, 'noah@gmail.com', '$2y$10$x/bSN9UAVTqpB1f8s3TtB.7D/ujY57fppnAXINpc2OId9/.Mb7v9G', 'student', 'Strong'),
+(12, 'noah@gmail.com', '$2y$10$f0uSKMqfIJPEV1A9X/UKSe15lJMP4r8fhAoZP4LyXuzX9popKKUMK', 'admin', 'Moderate'),
+(13, 'pakboy@gmail.com', '$2y$10$IZ3.475UUL5Bo1SfreQmSOz/IFvv30Xr.MRZcgQgOa9qLQfafEmqq', 'student', 'Strong'),
+(14, 'noah123@gmail.com', '$2y$10$cvOVmIYliKg462Bb.8/JUO0yZDjxOnTQqjXiKWMVecRz4ieJ9G9ty', 'admin', 'Strong');
 
 --
 -- Indexes for dumped tables
@@ -59,7 +63,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
