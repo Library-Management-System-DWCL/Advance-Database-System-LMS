@@ -57,8 +57,8 @@ body{
 
 .box .rectangle {
     position: relative;
-    width: 1200px;
-    height: 616px;
+    width: 1170px;
+    height: 500px;
     top: 0;
     margin-left: 15rem;
     background-color: #006ae5;
@@ -101,6 +101,79 @@ form{
     margin-left: 150px;
 }
 label{
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+    }
+input{
     position: relative;
-    display: inline;
+    display: block;
+    height: 30px;
+    width: 250px;
+    border-radius: 5px;
+}
+.rad{
+    position: relative;
+    width: 65%;
+	display: flex;
+    margin-top: 3rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+.in{
+    position: absolute;
+    display: flex;
+    margin-top: 2rem;
+    gap: 5px;
+}
+.in input{
+    position: relative;
+    height: 20px;
+    width: 15px;
+}
+.day{
+    position: relative;
+}
+.day label{
+    position: relative;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+.day input{
+    background:none;
+    border:none;
+    position: relative;
+    font-family: "Inter-Regular", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+}
+.lib{
+    position: relative;
+    width: 65%;
+    height: 50px;
+	display: flex;
+    top: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
 }

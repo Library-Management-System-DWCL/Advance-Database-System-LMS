@@ -41,7 +41,32 @@
                 <label>Last Name</label>
                 <input type="text" name="address" placeholder="Enter Your Address" required>
             </div>
-        </div>
+            <div class="rad">
+                <p>Gender</p>
+                <div class="in">
+                    <input type="radio">
+                    <label for="html">Male</label><br>
+                    <input type="radio">
+                    <label for="css">Female</label><br>
+                    <input type="radio">
+                    <label for="javascript">Others</label>
+                </div>
+                <div class="day">
+                    <label for="birthday">Birthday:</label>
+                    <input type="date" id="birthday" name="birthday">
+                </div>
+            </div>
+            <div class="lib">
+                <div class="line">
+                    <label for="student_id">Library Number</label>
+                    <input type="text" name="student_id" maxlength="4" placeholder="Enter Your id" required>
+                </div>
+                <div class="line">
+                    <label>EXP DATE</label>
+                    <input type="text" name="student_name" placeholder="Enter Your Name" required>
+                </div>
+            </div>
+            </form>
     </div>
     </div>
 </body>
