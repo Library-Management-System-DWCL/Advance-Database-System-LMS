@@ -85,9 +85,9 @@ body{
     display: flex;
     justify-content: center;
     text-align: center;
+
   }
   .table table{
-    border: 1px solid black;
     border-collapse: collapse;
     width: 100%;
     font-size: 1.5em;
@@ -95,10 +95,37 @@ body{
   .table th{
     font-family:Arial, Helvetica, sans-serif;
     font-weight:700;
+    border: 2px solid black;
+    text-align: center;
+
   }
   .table td{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size:.9em;
+  }
+  .table td:nth-child(2){
+    display: flex;
+    height: 68px;
+    text-align: center;
+  }
+  .table span{
+    margin-left: 10px;
+    margin-top: 18px;
+  }
+  .table tr td .img1,
+  .img2,
+  .img3,
+  .img4,
+  .img5,
+  .img6,
+  .img7,
+  .img8,
+  .img9,
+  .img10{
+    margin-top:3px;
+    margin-left: 100px;
+    width: 60px;
+    height:60px;
   }
   .table th:nth-child(1),
   td:nth-child(1){
