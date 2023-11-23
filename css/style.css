@@ -170,6 +170,7 @@
   margin: 10px;
   margin-left: 30px;
   margin-right: 30px;
+  width: 100%;
 }
 .booklist1, 
 .booklist2,
@@ -208,13 +209,13 @@
   transition: transform .3s ;
 }
 .booklist p {
-  margin-left: 10px;
+  /* margin-left: 10px;
   display: flex;
   font-size: 1px;
   font:100;
   cursor: pointer;
   display: flex;
-  margin-top: -20px;
+  margin-top: -20px; */
 }
 .booklist p:hover{
   text-decoration: underline;
@@ -224,7 +225,7 @@
 
 }
 .booklist button{
-  margin-top: 50px;
+  /* margin-top: 50px;
   position: absolute;
   width: 6rem;
   height: 18px;
@@ -232,7 +233,7 @@
   cursor: pointer;
   display:inline-block;
   border: solid 1px black;
-  border-radius: 10px;
+  border-radius: 10px; */
 }
 .button button:nth-child(1){
   left: 0;
