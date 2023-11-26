@@ -1,9 +1,9 @@
-* {
+*{
   padding: 0;
   margin: 0;
   top: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
 /* LOGO AND USER */
@@ -160,180 +160,79 @@
 
 }
 .books img:hover{
-  transform: scale(1.1);
+  transform: scale(1.2);
   cursor: pointer;
 }
-.booklist{
-  display: inline-grid;
+.booklist {
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  column-gap: 20px;
+  gap: 0px;
   margin: 10px;
-  margin-left: 30px;
-  margin-right: 30px;
-  width: 100%;
 }
-.booklist1, 
+
+.booklist1,
 .booklist2,
 .booklist3,
 .booklist4,
 .booklist5,
 .booklist6,
 .booklist7,
-.booklist8{
-  margin-top: 5px;
-  align-items:center;
-  margin-bottom: 10px;
-  display: inline-flex;
-  flex-direction: column;
-  position: relative;
+.booklist8 {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.booklist img {
+  width: 100%;
+  max-width: 200px; /* Adjust this as needed */
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.booklist img:hover {
+  transform: scale(1.5);
   cursor: pointer;
 }
 
-.book-info {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.booklist img{
-  width: 50px;
-}
-.booklist1 img:hover, 
-.booklist2 img:hover,
-.booklist3 img:hover,
-.booklist4 img:hover,
-.booklist5 img:hover,
-.booklist6 img:hover,
-.booklist7 img:hover,
-.booklist8 img:hover{
-  transform: scale(1.5);
-  transition: transform .3s ;
-}
 .booklist p {
-  /* margin-left: 10px;
-  display: flex;
-  font-size: 1px;
-  font:100;
+  font-size: 1px; /* Adjust this as needed */
   cursor: pointer;
-  display: flex;
-  margin-top: -20px; */
+  margin: 0 0 10px 0 ; /* top, right, bottom, left */
 }
-.booklist p:hover{
+
+.booklist p:hover {
   text-decoration: underline;
 }
-.booklist p:active{
-  color: #010190;
 
+.button {
+  flex-direction: column;
+  gap: 10px;
 }
-.booklist button{
-  /* margin-top: 50px;
-  position: absolute;
+
+.button button{
   width: 6rem;
-  height: 18px;
-  color: black;
+  color: white;
   cursor: pointer;
-  display:inline-block;
   border: solid 1px black;
-  border-radius: 10px; */
+  border-radius: 10px;
+  transition: transform .3s;
+}
+.button button:active{
+  opacity: .4;
 }
 .button button:nth-child(1){
-  left: 0;
-  color: white;
-  margin-left: 75px;
-  background: #010190;
-  transition: transform .1s;
+  background: blue;
 }
 .button button:nth-child(2){
+  background: red;
+}
+
+.button button:nth-child(1):hover,
+.button button:nth-child(2):hover {
+  box-shadow: 0 5px 8px 0 rgb(0, 0, 0);
+  transform: scale(1.1);
   color: white;
-  background: none;
-  background: rgb(187, 0, 0);
-  transition: transform .1s;
-}
-.button button:nth-child(1):hover{
-  transform: scale(1.1);
-  box-shadow: 0 5px 8px 0 rgb(0, 0, 0);
-  color:  white;
-
-}
-.button button:nth-child(2):hover{
-  box-shadow: 0 5px 8px 0 rgb(0, 0, 0);
-  transform: scale(1.1);
-  color:  white;
-}
-.button button:nth-child(1):active,
-.button button:nth-child(2):active{
-  opacity: 0.5;
-} 
-@media only screen and (max-width: 1200px) {
-  .container {
-    margin: 0 20px;
-  }
-
-  .search input[type="search"] {
-    width: 100%;
-  }
-
-  .nav-bar ul li {
-    padding: 10px 20px;
-  }
-
-  .books {
-    margin-top: -100px;
-  }
-
-  .booklist {
-    grid-template-columns: 1fr 1fr;
-    column-gap: 10px;
-  }
-
-  .booklist button {
-    margin-top: 20px;
-    margin-left: 10px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .logo {
-    margin: 20px 0;
-  }
-
-  .search {
-    margin: 20px 0;
-  }
-
-  .user-logo {
-    position: static;
-    border: none;
-    padding: 0;
-    margin-top: 20px;
-  }
-
-  .top-bar {
-    height: auto;
-  }
-
-  .logout-dropdown {
-    margin: 10px 0;
-  }
-
-  .nav-bar ul {
-    flex-direction: column;
-  }
-
-  .nav-bar ul li {
-    padding: 10px 0;
-  }
-
-  .books {
-    margin-top: -50px;
-  }
-
-  .booklist {
-    grid-template-columns: 1fr;
-    margin: 10px 5px;
-  }
 }
