@@ -142,26 +142,20 @@
 }
 
 /* content */
-.bg-image img{
-  height: 250px;
+.searchbooks{
+  padding: 15px;
+  margin-left: -115px;
+  text-align: center;
 }
-.books{
-  align-items: center;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  column-gap: 50px;
-  margin-top: -180px;
-}
-.books img{
-  width: 200px;
-  cursor: pointer;
-  transition: transform .5s;
-
-}
-.books img:hover{
-  transform: scale(1.2);
-  cursor: pointer;
+.searchbooks input[type="search"]{
+  font-weight: normal;
+  font-size: 20px;
+  width: 400px;
+  height: 50px;
+  border-radius: 100px;
+  border: solid 5px  #010190;
+  border-right: solid 50px #010190;
+  padding-left: 10px;
 }
 .booklist {
   display: grid;
