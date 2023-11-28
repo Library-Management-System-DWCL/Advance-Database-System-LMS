@@ -30,7 +30,7 @@
         <img src="./images/user.png" alt="user-logo" draggable="false" style="cursor: pointer;">
         <label for="username" style="cursor: pointer;">
           <p>57842340@dwc-legazpi.edu</p>
-        </label> &nbsp;
+        </label>
         <i class="fa-solid fa-circle-chevron-down fa-lg" id="logout-icon" style="color:#910000; cursor: pointer;"></i>
         <div class="logout-dropdown" id="logout-dropdown">
           <a href="#" id="logout-link">Profile</a>
