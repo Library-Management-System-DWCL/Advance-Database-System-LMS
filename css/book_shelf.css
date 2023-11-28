@@ -1,0 +1,332 @@
+*{
+  padding: 0;
+  margin: 0;
+  top: 0;
+  box-sizing: border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+/* Your existing CSS for LOGO AND USER */
+
+/* LOGO AND USER */
+.container{
+  /* background: #F0ECE2; */
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid;
+  height: 100px;
+}
+
+.logo{
+  margin-left: 55px;
+  width: 105px;
+  height: 84px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.logo li{
+  top: 0;
+  margin-top: -25px;
+  margin-left: -25px;
+}
+
+
+.search-container {
+  margin-left: 5%;
+  position: relative;
+  display: inline-block;
+}
+
+.search input[type="search"]{
+  font-weight: normal;
+  font-size: 20px;
+  width: 600px;
+  height: 50px;
+  border-radius: 100px;
+  border: solid 5px  #010190;
+  border-right: solid 50px #010190;
+  padding-left: 10px;
+}
+.fa-solid{
+  margin-left: -40px;
+}
+.fa-solid:active{
+  opacity: 0.3;
+}
+.user{
+  padding-left: 20px;
+  display: block;
+  border-left: solid 2px #000;
+}
+.user-logo {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  position: relative; 
+}
+.library-card, .library-card p{
+  display: flex;
+  margin-top: -10px;
+}
+
+.user-logo img,
+.library-card img {
+  margin-bottom: 10px;
+  width: 40px;
+  display: inline; /* Display the image as a block */
+}
+
+.user p:hover {
+  text-decoration: underline;
+}
+
+.user p:active {
+  color: #010190;
+}
+
+.user label[for="username"],
+.user label[for="card-id"] {
+  color: #000000;
+  display: inline-grid;
+  font-size: 8px;
+  margin-right: 40px;
+}
+
+.user label[for="card-id"] {
+  margin-top: 15px;
+} 
+
+/* Hide logout dropdown by default */
+.logout-dropdown {
+  display: none;
+  position: absolute;
+  background-color: rgb(130, 0, 0);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: 10%;
+  top: 70%;
+}
+
+/* Style the logout link */
+.logout-dropdown a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.logout-dropdown a:hover{
+  background:rgb(84, 1, 1);
+}
+
+/* Change color on hover */
+.logout-dropdown a:active {
+  opacity: 0.5;
+}
+
+
+/* NAV BAR */
+.nav-bar {
+  color: white;
+  background: #010190;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.nav-bar ul li{
+  margin: 0 0 0 0;
+  display: inline-flex;
+  padding: .2% 80px;
+  border-right: solid #006AE5;
+}
+.nav-bar ul li:last-child{
+  border-right: none;
+}
+.nav-bar ul li a,i{
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+.nav-bar ul li:hover{
+  background-color: rgb(0, 0, 84);
+  cursor: pointer;
+}
+
+/* content */
+
+.searchbooks{
+  margin: 20px 0 -30px 0;
+  text-align: center;
+}
+.searchbooks input[type="search"]{
+  font-weight: normal;
+  font-size: 20px;
+  width: 25%;
+  height: 6vh;
+  width: 25vw;
+  border-radius: 100px;
+  border: solid 5px  #010190;
+  border-right: solid 50px #010190;
+  padding-left: 2%;
+}
+.booklist {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0px;
+  margin: 3%;
+}
+.booklist1,
+.booklist2,
+.booklist3,
+.booklist4,
+.booklist5,
+.booklist6,
+.booklist7,
+.booklist8 {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.booklist img {
+  width: 100%;
+  max-width: 200%; /* Adjust this as needed */
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.booklist img:hover {
+  transform: scale(1.5);
+  cursor: pointer;
+}
+.booklist p {
+  font-size: 1px; /* Adjust this as needed */
+  cursor: pointer;
+  margin: 0 0 2% 0 ; /* top, right, bottom, left */
+}
+
+.booklist p:hover {
+  text-decoration: underline;
+}
+
+.button {
+  flex-direction: column;
+  gap: 5%;
+}
+
+.button button{
+  width: 6rem;
+  color: white;
+  cursor: pointer;
+  border: solid 1px black;
+  border-radius: 10px;
+  transition: transform .3s;
+}
+.button button:active{
+  opacity: .4;
+}
+.button button:nth-child(1){
+  background: blue;
+}
+.button button:nth-child(2){
+  background: red;
+}
+
+.button button:nth-child(1):hover,
+.button button:nth-child(2):hover {
+  box-shadow: 0 5px 8px 0 rgb(0, 0, 0);
+  transform: scale(1.1);
+  color: white;
+}
+.pagination {
+  margin: 1%;
+  text-align: center;
+}
+
+.pagination a {
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+  border: 1px solid #ddd;
+  margin: 0 .1%;
+}
+.pagination a:hover {
+  background-color: #ddd;
+}
+
+.pagination .active {
+  background: #a1a1a1;
+}
+
+/* Media Queries for responsiveness */
+
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo {
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .search {
+    margin: 2% auto;
+  }
+
+  .search input[type="search"] {
+    width: 80%;
+    margin-bottom: 2%;
+  }
+
+  .user-logo {
+    position: static;
+    border-left: none;
+    text-align: center;
+    margin-top: 2%;
+  }
+
+  .user-logo img,
+  .library-card img {
+    margin-bottom: 2%;
+    margin-right: 2%;
+  }
+
+  .user label[for="username"],
+  .user label[for="card-id"] {
+    margin-right: 0;
+  }
+
+  .top-bar,
+  .nav-bar {
+    height: auto;
+  }
+
+  .nav-bar ul li {
+    padding: 2% 5%;
+  }
+
+  .searchbooks,
+  .pagination {
+    margin: 5% auto;
+  }
+
+  .searchbooks input[type="search"] {
+    width: 80%;
+  }
+
+  .booklist img {
+    max-width: 100%;
+  }
+
+  .button button {
+    width: 100%;
+  }
+}
+

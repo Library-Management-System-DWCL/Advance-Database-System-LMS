@@ -1,65 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/book_shelf.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.1/css/all.css">
-
-  <title>Homepage</title>
-
+  <title>Book Shelf</title>
 </head>
-
 <body>
-  <!-- navbar -->
   <div class="top-bar">
     <div class="container">
       <div class="logo">
-        <div style="display: flex;align-items: center;">
+        <div style="display: flex; align-items: center;">
           <img src="./images/logo2.png" alt="logo" width="90px" draggable="false">
           <li>LIBRARY MANAGEMENT SYSTEM</li>
         </div>
       </div>
-    </div>
-    <div class="search"><input type="search" placeholder="Search..."><i class="fa-solid fa-magnifying-glass fa-xl" style="color: white; cursor: pointer;"></i>
-    </div>
-    <div class="user">
-      <div class="user-logo">
-        <img src="./images/user.png" alt="user-logo" draggable="false" style="cursor: pointer;">
-        <label for="username" style="cursor: pointer;">
-          <p>57842340@dwc-legazpi.edu</p>
-        </label> &nbsp;
-        <i class="fa-solid fa-circle-chevron-down fa-lg" id="logout-icon" style="color:#910000; cursor: pointer;"></i>
-        <div class="logout-dropdown" id="logout-dropdown">
-          <a href="#" id="logout-link">Profile</a>
-          <a href="#" id="logout-link">Settings & Privacy</a>
-          <a href="#" id="logout-link">Logout</a>
-        </div>
 
+      <div class="search">
+        <div class="search-container">
+          <input type="search" placeholder="Search...">
+          <i class="fa-solid fa-magnifying-glass fa-xl" style="color: white; cursor: pointer;"></i>
+        </div>
+      </div>
+      
+      <div class="user" >
+        <div class="user-logo">
+          <img src="./images/user.png" alt="user-logo" draggable="false" style="cursor: pointer;">
+          <label for="username" style="cursor: pointer;">
+            <p>57842340@dwc-legazpi.edu</p>
+          </label> &nbsp;
+          <i class="fa-solid fa-circle-chevron-down fa-lg" id="logout-icon" style="color:#910000; cursor: pointer;"></i>
+          <div class="logout-dropdown" id="logout-dropdown">
+            <a href="#" id="logout-link">Profile</a>
+            <a href="#" id="logout-link">Settings & Privacy</a>
+            <a href="#" id="logout-link">Logout</a>
+          </div>
+        </div>
+        <div class="library-card">
+          <img src="./images/library-card 1.png" alt="library-card" draggable="false" style="cursor: pointer;">
+          <label for="card-id" style="cursor: pointer;">
+            <p>GET A LIBRARY CARD NOW!!</p>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>  
         <script>
           // Add an event listener to the logout icon to toggle the logout dropdown
           document.getElementById('logout-icon').addEventListener('click', function() {
             var logoutDropdown = document.getElementById('logout-dropdown');
             logoutDropdown.style.display = (logoutDropdown.style.display === 'block') ? 'none' : 'block';
           });
-
           // Close the logout dropdown if the user clicks outside of it
           window.addEventListener('click', function(event) {
             var logoutIcon = document.getElementById('logout-icon');
             var logoutDropdown = document.getElementById('logout-dropdown');
-
             if (!logoutIcon.contains(event.target) && !logoutDropdown.contains(event.target)) {
               logoutDropdown.style.display = 'none';
             }
           });
-
           // Prevent the document click event from closing the dropdown when the icon is clicked
           document.getElementById('logout-icon').addEventListener('click', function(event) {
             event.stopPropagation();
           });
-
           // Add an event listener to the logout link to perform the logout action
           document.getElementById('logout-link').addEventListener('click', function() {
             // Add your logout logic here
@@ -68,30 +72,23 @@
           });
         </script>
 
-        <hr style="border-color: black;">
-        <div class="library-card"><img src="./images/library-card 1.png" alt="library-card" draggable="false" style="cursor: pointer;">
-          <label for="card-id" style="cursor: pointer;">
-            <p>GET A LIBRARY CARD NOW!!</p>
-          </label>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-
   <div class="nav-bar">
     <ul>
-      <li><a href="#">BORROW</a></li>
-      <li><a href="#">RESERVE</a></li>
-      <li><a href="#">CATEGORIES</a> <i class="fa-solid fa-chevron-down fa-2xs" style="color: #ffffff;"></i></li>
-      <li><a href="#">CONTACTS</a></li>
+      <li><a href="#">HOME</a></li>
+      <li><a href="#">CATALOG</a></li>
+      <li><a href="#">AUTHOR</a></li>
+      <li><a href="#">POPULAR</a></li>
+      <li><a href="#">GENRES</a></li>
+      <li><a href="#">RECOMENDATIONS</a></li>
     </ul>
   </div>
   
   <!-- CONTENT -->
-<div class="searchbooks">
-  <input type="search" placeholder="Search Books..."><i class="fa-solid fa-magnifying-glass fa-xl" style="color: white; cursor: pointer;"></i>
-</div>
+
+  <div class="searchbooks">
+    <input type="search" placeholder="Search Books..."><i class="fa-solid fa-magnifying-glass fa-xl" style="color: white; cursor: pointer;"></i>
+  </div>
+
     <!-- Books -->
   <div class="booklist">
     <div class="booklist1">
@@ -302,6 +299,14 @@
     </div>
   </div>
   
+    <!-- PAGINATION -->
+<div class="pagination">
+  <a href="#"> << </a>
+  <a href="./homepage.php">1</a>
+  <a href="./bookshelf.php" class="active">2</a>
+  <a href="#"> >> </a>
+
+</div>
 
 </body>
 
