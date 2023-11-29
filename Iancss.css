@@ -1,0 +1,172 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #010190;
+    overflow: hidden;
+    margin-bottom: 10px;
+
+}
+
+nav a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#search-container1 {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    background-color: #ddd;
+}
+
+#search-bar {
+    padding: 8px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+#search-button {
+    padding: 8px 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+/* 1 */
+
+
+.box {
+    width: 300px;
+    padding: 10px;
+    background-color: #010190; 
+    color: white; 
+    border-radius: 8px; 
+    text-align: center;
+
+    
+}
+
+.box h3 {
+    margin-top: 0;
+}
+
+.box p {
+    margin: 20px 0;
+}
+
+#quote-box {
+    width: 400px;
+    padding: 20px;
+    left: 20px;
+    background-color: #c3c3c6;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+}
+
+#search-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#search-bar {
+    padding: 8px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+#search-button {
+    padding: 8px 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#news-box {
+    width: 300px;
+    padding: 20px;
+    background-color: #010190;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.con {
+    width: 300px;
+    padding: 20px;
+    background-color: #d91e1e; 
+    color: white; 
+    border-radius: 8px; 
+    margin: 20px;
+    text-align: center;
+}
+
+.con h3 {
+    margin-top: 0;
+}
+
+.con p {
+    margin: 10px 0;
+}
+.nin {
+    width: 400px;
+    padding: 20px;
+    background-color: #d91e1e; 
+    color: white; 
+    border-radius: 8px; 
+    margin: 20px;
+    text-align: center;
+}
+
+.nin h3 {
+    margin-top: 0;
+}
+
+.nin p {
+    margin: 10px 0;
+
+}
+.non {
+    width: 300px;
+    padding: 20px;
+    background-color: #d91e1e; 
+    color: white; 
+    border-radius: 8px; 
+    margin: 20px;
+    text-align: center;
+}
+
+.non h3 {
+    margin-top: 0;
+}
+
+.non p {
+    margin: 10px 0;
+}
+.flex{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+ }
