@@ -55,6 +55,19 @@
     // Retrieve other user information from the session
     $user_email = $_SESSION['email'];
     $role = $_SESSION['role'];
+
+    switch ($role) {
+        case 'admin':
+            header('Location: ../admin_dashboard.php');
+            break;
+        case 'librarian':
+            header('Location: ../librarian_dashboard.php');
+            break;
+        default:
+            header('Location: ../user_dashboard.php');
+            break;
+    }
+    exit();
     ?>
 
     <div class="container">
@@ -80,7 +93,7 @@
                 <div class="dropdown-content">
                     <a href="#">Profile</a>
                     <a href="#">Settings</a>
-                    <a href="../logout.php">Logout</a>
+                    <a href="functions/logout.php">Logout</a>
                 </div>
             </div>
         </div>
@@ -109,6 +122,7 @@
             </div>
         </div>
     </div> -->
+    
 </body>
 
 </html>

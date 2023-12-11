@@ -185,7 +185,7 @@
             <td>7</td>
             <td>
                 <img src="./images/man.png" alt="pfp" class="img7">
-                <span>Angel</span>
+                <span>Angel na jowa ni dave</span>
             </td>
             <td>I love George</td>
             <td>11/18/23</td>
