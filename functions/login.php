@@ -11,6 +11,11 @@ if (isset($_POST['login'])) {
         // CAPTCHA is correct, continue with login verification
         include 'connection.php';
 
+        // Check if the connection was successful
+        if (!$conn) {
+            die("Database connection failed: " . mysqli_connect_error());
+        }
+
         $email = $_POST['email'];
         $password = $_POST['password'];
 
@@ -38,32 +43,34 @@ if (isset($_POST['login'])) {
 
                 switch ($role) {
                     case 'admin':
-                        header('Location: ../admin_dashboard.php');
-                        break;
+                        mysqli_close($conn);
+                        header('Location: /Project-Name/admin_dashboard.php');
+                        exit();
                     case 'librarian':
-                        header('Location: ../librarian_dashboard.php');
-                        break;
+                        mysqli_close($conn);
+                        header('Location: /Project-Name/librarian_dashboard.php');
+                        exit();
                     default:
-                        header('Location: ../user_dashboard.php');
-                        break;
+                        mysqli_close($conn);
+                        header('Location: /Project-Name/user_dashboard.php');
+                        exit();
                 }
-                exit();
             } else {
                 $_SESSION['login_error'] = 'Incorrect password.';
-                header('Location: ../login_page.php');
+                mysqli_close($conn);
+                header('Location: /Project-Name/login_page.php');
                 exit();
             }
         } else {
             $_SESSION['login_error'] = 'User not found.';
-            header('Location: ../login_page.php');
+            mysqli_close($conn);
+            header('Location: /Project-Name/login_page.php');
             exit();
         }
-
-        mysqli_close($conn);
     } else {
         $_SESSION['login_error'] = 'Incorrect CAPTCHA code.';
-        header('Location: ../login_page.php');
+        mysqli_close($conn);
+        header('Location: /Project-Name/login_page.php');
         exit();
     }
 }
-?>
