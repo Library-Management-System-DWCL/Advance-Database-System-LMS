@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./css/user_checkout.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.1/css/all.css">
 
-    <title>Checkout(User)</title>
+    <title>Checkout (User)</title>
 </head>
 
 <body>
@@ -29,7 +29,10 @@
     <div class="title">
         <p>CHECKOUT LIST</p>
         <div class="del-butt">
-            <button>DELETE ALL</button>
+            <button>DELETE</button>
+            <div class="selectall">
+                <button>SELECT ALL</button>
+            </div>
         </div>
     </div>
 
@@ -274,6 +277,17 @@
             </tr>
         </table>
     </div>
+
+    <script>
+        document.querySelector('.selectall button').addEventListener('click', function () {
+            var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            var allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
+            for (var i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].checked = !allChecked;
+            }
+        });
+    </script>
+</body>
 
 </body>
 

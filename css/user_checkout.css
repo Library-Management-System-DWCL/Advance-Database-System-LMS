@@ -167,6 +167,11 @@ body{
 .title button:active{
   opacity: .5;
 }
+.del-butt{
+  display: inline-flex;
+  justify-content: space-between;
+  gap: 130px;
+}
 .button img{
   cursor: pointer;
 }
