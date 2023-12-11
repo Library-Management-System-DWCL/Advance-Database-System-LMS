@@ -24,7 +24,7 @@
         <div class="image"><img class="home" src="images/home.png" /></div>
         <div class="label"><div class="text-wrapper">Home</div></div>
     </div>
-    <div>   nnn
+    <div> 
     <div class="box">
         <div class="rectangle">
         <div class="label"><div class="per">Personal Information:</div></div>
