@@ -1,10 +1,19 @@
+<?php 
+
+include 'functions/connection.php';
+
+$query = "SELECT * FROM users";
+$result = mysqli_query($conn, $query);
+$total_users = mysqli_num_rows($result);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/admin_dashboard.css">
-    <title>Document</title>
+    <title>Dashboard (admin)</title>
 </head>
 <body>
 <div class="container">
@@ -44,12 +53,17 @@
         </div>
     </div>
     <div class="cat">
-        <div style="display:flex;justify-content: space-evenly;gap:5rem;padding: 2rem;">
-            <div class="cat2"><img src="images/stack-of-books.png" alt="">10</div>
-            <div class="cat2"><img src="images/return_1.png" alt="">2</div>
-            <div class="cat2"><img src="images/occupation.png" alt="">50</div>
-            <div class="cat2"><img src="images/group.png" alt="">150</div>
-        </div>
+    <div style="display:flex;justify-content: space-evenly;gap:5rem;padding: 2rem;">
+        <div class="cat2"><img src="images/stack-of-books.png" alt="">10</div>
+        <div class="cat2"><img src="images/return_1.png" alt="">2</div>
+        <div class="cat2"><img src="images/occupation.png" alt="">50</div>
+
+        <!-- Wrap the group.png in an anchor tag -->
+        <a href="users_list.html" class="cat2">
+            <img src="images/group.png" alt="Users List"> <?php echo $total_users; ?>
+        </a>
     </div>
+</div>
+
 </body>
 </html>
