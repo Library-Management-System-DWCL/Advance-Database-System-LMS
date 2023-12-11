@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+// If the user is already logged in, redirect them to the dashboard
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
+    header('Location: user_dashboard.php');
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -5,10 +5,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/user_dashboard.css">
-    <title>Document</title>
+    <title>User Dashboard</title>
+
+    <style>
+        /* Add your CSS styles for the dropdown button here */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
 </head>
 
 <body>
+    <?php
+    session_start();
+
+    // Check if the user is not logged in
+    if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
+        header('Location: ../login_page.php');
+        exit();
+    }
+
+    // Retrieve other user information from the session
+    $user_email = $_SESSION['email'];
+    $role = $_SESSION['role'];
+    ?>
+
     <div class="container">
         <div class="logo">
             <div style="display: flex;align-items: center;">
@@ -23,16 +70,27 @@
         </div>
         <div style="display:flex;gap:1rem;align-items:center;margin-right: 40px;">
             <li><img src="images/bell-ring.png" width="30px" style="margin-top: 5px;"></li>
-            <li>07108487@dwc-legazpi.edu</li>
-            <li><img src="images/next.png" width="20px"></li>
+            <!-- Display the user's email here -->
+            <div class="dropdown">
+                <li><?php echo $user_email; ?></li>
+                <li><img src="images/next.png" width="20px"></li>
+                <div class="dropdown-content">
+                    <a href="#">Profile</a>
+                    <a href="#">Settings</a>
+                    <a href="../logout.php">Logout</a>
+                </div>
+            </div>
         </div>
     </div>
+
     <div class="label">
         <div class="text-wrapper">MY LIBRARY ACCOUNT</div>
     </div>
+
     <div class="box">
         <div class="rectangle"></div>
     </div>
+
     <div style="justify-content: center;display: flex;margin-top: 10%;">
         <div style="display:flex;justify-content: space-evenly;gap:5rem;">
             <div><img src="images/stack-of-books.png" alt=""></div>
@@ -40,6 +98,7 @@
             <div><img src="images/wishlist_1.png" alt=""></div>
         </div>
     </div>
+
     <!-- <div class="box1">
         <div class="tangle">
             <div class="image">

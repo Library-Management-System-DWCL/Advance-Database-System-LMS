@@ -47,8 +47,12 @@ body{
 }
 button{
     border-radius: 20px;
-border: 3px solid #000;
-background: #FBD87E;
+    border: 3px solid #000;
+    background: #FBD87E;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
 }
 .book1 {
     display: flex;

@@ -32,9 +32,12 @@ if (isset($_POST['login'])) {
                 // Store user information in the session
                 $_SESSION['email'] = $user['email'];
                 $_SESSION['role'] = $role;
+                $_SESSION['logged_in'] = true; // Set the session variable for login
 
-                // Redirect to welcome page
-                header('Location: ../welcome.php');
+                $_SESSION['loggedin'] = true;
+
+                // Redirect to user dashboard
+                header('Location: ../user_dashboard.php');
                 exit();
             } else {
                 $_SESSION['login_error'] = 'Incorrect password.';
