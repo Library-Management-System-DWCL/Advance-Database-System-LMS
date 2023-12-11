@@ -47,7 +47,7 @@ $result = mysqli_query($conn, $query);
                 <th>Date Return</th>
                 <th>Action</th>
             </tr>
-            <?php while ($row = mysqli_fetch_assoc($result)): ?>
+            <?php while ($row = mysqli_fetch_assoc($result)) : ?>
                 <tr>
                     <td>
                         <?php echo $row['user_id']; ?>
@@ -68,7 +68,9 @@ $result = mysqli_query($conn, $query);
                                 <p>Store</p>
                             </div>
                             <div>
-                                <img src="./images/delete.png" alt="delete" width="30px">
+                                <a href="functions/delete_user.php?user_id=<?php echo $row['user_id']; ?>">
+                                    <img src="./images/delete.png" alt="delete" width="30px">
+                                </a>
                                 <p>Delete</p>
                             </div>
                         </div>
