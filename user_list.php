@@ -53,9 +53,11 @@ $result = mysqli_query($conn, $query);
                         <?php echo $row['user_id']; ?>
                     </td>
                     <td>
-                        <img src="./images/man.png" alt="pfp" class="img1">
-                        <span>
-                            <?php echo $row['email']; ?>
+                        <span style="text-align: left;width: 60%;display:flex;align-items:center;gap: 0.5rem;">
+                            <img src="./images/man.png" alt="pfp" class="img1">
+                            <span>
+                                <?php echo $row['email']; ?>
+                            </span>
                         </span>
                     </td>
                     <td></td>
