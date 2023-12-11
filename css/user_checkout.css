@@ -165,6 +165,7 @@ body{
 .button input[type="checkbox"] {
   width: 25px;
   height: 26px;
+  cursor: pointer;
 }
 .button img{
   cursor: pointer;
