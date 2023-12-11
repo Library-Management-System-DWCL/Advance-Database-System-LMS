@@ -1,13 +1,22 @@
+<?php
+include 'functions/connection.php';
+
+$query = "SELECT * FROM users";
+$result = mysqli_query($conn, $query);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/user_checkout.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.1/css/all.css">
 
-  <title>User List</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/user_checkout.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.1/css/all.css">
+
+    <title>User List</title>
 </head>
+
 <body>
 
     <div class="container">
@@ -18,8 +27,8 @@
             </div>
         </div>
         <div style="display:flex;gap:1rem;align-items:center;margin-right: 40px;">
-            <li><img src="images/bell-ring.png"alt="bell" width="30px" style="margin-top: 5px;"></li>
-            <li><img src="./images/user.png"alt="user" width="40px" style="margin-top: 5px;"></li>
+            <li><img src="images/bell-ring.png" alt="bell" width="30px" style="margin-top: 5px;"></li>
+            <li><img src="./images/user.png" alt="user" width="40px" style="margin-top: 5px;"></li>
             <li>07108487@dwc-legazpi.edu</li>
             <li><img src="images/next.png" alt="next" width="20px"></li>
         </div>
@@ -30,255 +39,45 @@
 
     <div class="table">
         <table border="2">
-        <tr>
-            <th>#</th>
-            <th>Email</th>
-            <th>Book Title</th>
-            <th>Date Borrow</th>
-            <th>Date Return</th>
-            <th>Action</th>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>
-                <img src="./images/man.png" alt="pfp" class="img1">
-                  <span>Jade Raposa</span>
-            </td>
-            <td>The School of Life</td>
-            <td>11/18/23</td>
-            <td>11/20/23</td>
-            <div class="button">
-                <td>
-                    <div class="button">
-                        <div>
-                            <img src="./images/store.png" alt="store" width="30px">
-                            <p>Store</p>
-                        </div>
-                        <div>
-                            <img src="./images/delete.png" alt="delete" width="30px">
-                            <p>Delete</p>
-                        </div>
-                    </div>
-                </td>
+            <tr>
+                <th>#</th>
+                <th>Email</th>
+                <th>Book Title</th>
+                <th>Date Borrow</th>
+                <th>Date Return</th>
+                <th>Action</th>
             </tr>
-        <tr>
-            <td>2</td>
-            <td>
-                <img src="./images/man.png" alt="pfp"class="img2">
-                <span>Christian Montesor</span>
-            </td>
-            <td>The School of Life</td>
-            <td>11/18/23</td>
-            <td>11/20/23</td>
-             <div class="button">
-                <td>
-                    <div class="button">
-                        <div>
-                            <img src="./images/store.png" alt="store" width="30px">
-                            <p>Store</p>
+            <?php while ($row = mysqli_fetch_assoc($result)): ?>
+                <tr>
+                    <td>
+                        <?php echo $row['user_id']; ?>
+                    </td>
+                    <td>
+                        <img src="./images/man.png" alt="pfp" class="img1">
+                        <span>
+                            <?php echo $row['email']; ?>
+                        </span>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <div class="button">
+                            <div>
+                                <img src="./images/store.png" alt="store" width="30px">
+                                <p>Store</p>
+                            </div>
+                            <div>
+                                <img src="./images/delete.png" alt="delete" width="30px">
+                                <p>Delete</p>
+                            </div>
                         </div>
-                        <div>
-                            <img src="./images/delete.png" alt="delete" width="30px">
-                            <p>Delete</p>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>
-                <img src="./images/man.png" alt="pfp" class="img3">
-             <span>John Raven</span>
-                </td>
-            <td>The School of Life</td>
-            <td>11/18/23</td>
-            <td>11/20/23</td>
-            <div class="button">
-                <td>
-                    <div class="button">
-                        <div>
-                            <img src="./images/store.png" alt="store" width="30px">
-                            <p>Store</p>
-                        </div>
-                        <div>
-                            <img src="./images/delete.png" alt="delete" width="30px">
-                            <p>Delete</p>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>
-                <img src="./images/man.png" alt="pfp" class="img4">
-               <span>George Literal</span>
-            </td>
-            <td>The School of Life</td>
-            <td>11/18/23</td>
-            <td>11/20/23</td>
-             <div class="button">
-                <td>
-                    <div class="button">
-                        <div>
-                            <img src="./images/store.png" alt="store" width="30px">
-                            <p>Store</p>
-                        </div>
-                        <div>
-                            <img src="./images/delete.png" alt="delete" width="30px">
-                            <p>Delete</p>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-        </tr>
-        <tr>
-            <td>5</td>
-            <td>
-                <img src="./images/man.png" alt="pfp" class="img5">
-                <span>Leah Jimenez</span>
-            </td>
-            <td>The School of Life</td>
-            <td>11/18/23</td>
-            <td>11/20/23</td>
-             <div class="button">
-                <td>
-                    <div class="button">
-                        <div>
-                            <img src="./images/store.png" alt="store" width="30px">
-                            <p>Store</p>
-                        </div>
-                        <div>
-                            <img src="./images/delete.png" alt="delete" width="30px">
-                            <p>Delete</p>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-        </tr>
-        <tr>
-            <td>6</td>
-            <td>
-                <img src="./images/man.png" alt="pfp" class="img6">
-                <span>Ian Bueno</span>
-            </td>
-            <td>The School of Life</td>
-            <td>11/18/23</td>
-            <td>11/20/23</td>
-            <div class="button">
-                <td>
-                    <div class="button">
-                        <div>
-                            <img src="./images/store.png" alt="store" width="30px">
-                            <p>Store</p>
-                        </div>
-                        <div>
-                            <img src="./images/delete.png" alt="delete" width="30px">
-                            <p>Delete</p>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-        </tr>
-        <tr>
-            <td>7</td>
-            <td>
-                <img src="./images/man.png" alt="pfp" class="img7">
-                <span>Angel</span>
-            </td>
-            <td>I love George</td>
-            <td>11/18/23</td>
-            <td>11/20/23</td>
-             <div class="button">
-                <td>
-                    <div class="button">
-                        <div>
-                            <img src="./images/store.png" alt="store" width="30px">
-                            <p>Store</p>
-                        </div>
-                        <div>
-                            <img src="./images/delete.png" alt="delete" width="30px">
-                            <p>Delete</p>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-        </tr>
-        <tr>
-            <td>8</td>
-            <td>
-                <img src="./images/man.png" alt="pfp" class="img8">
-                <span>Christian Montesor</span>
-            </td>
-            <td>The School of Life</td>
-            <td>11/18/23</td>
-            <td>11/20/23</td>
-             <div class="button">
-                <td>
-                    <div class="button">
-                        <div>
-                            <img src="./images/store.png" alt="store" width="30px">
-                            <p>Store</p>
-                        </div>
-                        <div>
-                            <img src="./images/delete.png" alt="delete" width="30px">
-                            <p>Delete</p>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-        </tr>
-        <tr>
-            <td>9</td>
-            <td>
-                <img src="./images/man.png" alt="pfp" class="img9">
-                <span>Christian Montesor</span>
-            </td>
-            <td>The School of Life</td>
-            <td>11/18/23</td>
-            <td>11/20/23</td>
-             <div class="button">
-                <td>
-                    <div class="button">
-                        <div>
-                            <img src="./images/store.png" alt="store" width="30px">
-                            <p>Store</p>
-                        </div>
-                        <div>
-                            <img src="./images/delete.png" alt="delete" width="30px">
-                            <p>Delete</p>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-        </tr>
-        <tr>
-            <td>10</td>
-            <td>
-                <img src="./images/man.png" alt="pfp" class="img10">
-                <span>Christian Montesor</span>
-            </td>
-            <td>The School of Life</td>
-            <td>11/18/23</td>
-            <td>11/20/23</td>
-            <div class="button">
-                <td>
-                    <div class="button">
-                        <div>
-                            <img src="./images/store.png" alt="store" width="30px">
-                            <p>Store</p>
-                        </div>
-                        <div>
-                            <img src="./images/delete.png" alt="delete" width="30px">
-                            <p>Delete</p>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-        </tr>
+                    </td>
+                </tr>
+            <?php endwhile; ?>
         </table>
     </div>
 
 </body>
+
 </html>
