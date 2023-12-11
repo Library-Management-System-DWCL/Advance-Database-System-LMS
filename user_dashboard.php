@@ -17,9 +17,10 @@
 
         .dropdown-content {
             display: none;
+            top: 1.5rem;
             position: absolute;
             background-color: #f9f9f9;
-            min-width: 160px;
+            /* min-width: 160px; */
             box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
             z-index: 1;
         }
@@ -54,6 +55,19 @@
     // Retrieve other user information from the session
     $user_email = $_SESSION['email'];
     $role = $_SESSION['role'];
+
+    switch ($role) {
+        case 'admin':
+            header('Location: ../admin_dashboard.php');
+            break;
+        case 'librarian':
+            header('Location: ../librarian_dashboard.php');
+            break;
+        default:
+            header('Location: ../user_dashboard.php');
+            break;
+    }
+    exit();
     ?>
 
     <div class="container">
@@ -72,12 +86,14 @@
             <li><img src="images/bell-ring.png" width="30px" style="margin-top: 5px;"></li>
             <!-- Display the user's email here -->
             <div class="dropdown" style="display: flex; gap:0.5rem">
-                <li><?php echo $user_email; ?></li>
+                <li>
+                    <?php echo $user_email; ?>
+                </li>
                 <li><img src="images/next.png" width="20px"></li>
                 <div class="dropdown-content">
                     <a href="#">Profile</a>
                     <a href="#">Settings</a>
-                    <a href="../logout.php">Logout</a>
+                    <a href="functions/logout.php">Logout</a>
                 </div>
             </div>
         </div>
@@ -106,6 +122,7 @@
             </div>
         </div>
     </div> -->
+    
 </body>
 
 </html>

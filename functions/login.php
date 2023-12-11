@@ -36,8 +36,17 @@ if (isset($_POST['login'])) {
 
                 $_SESSION['loggedin'] = true;
 
-                // Redirect to user dashboard
-                header('Location: ../user_dashboard.php');
+                switch ($role) {
+                    case 'admin':
+                        header('Location: ../admin_dashboard.php');
+                        break;
+                    case 'librarian':
+                        header('Location: ../librarian_dashboard.php');
+                        break;
+                    default:
+                        header('Location: ../user_dashboard.php');
+                        break;
+                }
                 exit();
             } else {
                 $_SESSION['login_error'] = 'Incorrect password.';
