@@ -84,23 +84,6 @@ body{
     font-weight: normal;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
-  .title button{
-    display: flex;
-    margin-left: -100px;
-    background: none;
-    padding: 5px;
-    border: solid 1px white;
-    cursor: pointer;
-    justify-content: center;
-    color: white;
-    transition: transform .2s;
-  }
-  .title button:hover{
-    transform: scale(1.1);
-  }
-  .title button:active{
-    opacity: .5;
-  }
 
   /* TABLE */
   .table{
@@ -166,6 +149,23 @@ body{
   width: 25px;
   height: 26px;
   cursor: pointer;
+}
+.title button{
+  display: flex;
+  margin-left: -120px;
+  background: none;
+  padding: 5px;
+  border: solid 1px white;
+  cursor: pointer;
+  justify-content: center;
+  color: white;
+  transition: transform .2s;
+}
+.title button:hover{
+  transform: scale(1.1);
+}
+.title button:active{
+  opacity: .5;
 }
 .button img{
   cursor: pointer;

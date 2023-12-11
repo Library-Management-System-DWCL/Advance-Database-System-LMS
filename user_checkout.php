@@ -29,7 +29,7 @@
     <div class="title">
         <p>CHECKOUT LIST</p>
         <div class="del-butt">
-            <button>DELETE</button>
+            <button>DELETE ALL</button>
         </div>
     </div>
 
