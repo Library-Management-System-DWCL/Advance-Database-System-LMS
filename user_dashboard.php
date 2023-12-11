@@ -17,9 +17,10 @@
 
         .dropdown-content {
             display: none;
+            top: 1.5rem;
             position: absolute;
             background-color: #f9f9f9;
-            min-width: 160px;
+            /* min-width: 160px; */
             box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
             z-index: 1;
         }
@@ -72,7 +73,9 @@
             <li><img src="images/bell-ring.png" width="30px" style="margin-top: 5px;"></li>
             <!-- Display the user's email here -->
             <div class="dropdown" style="display: flex; gap:0.5rem">
-                <li><?php echo $user_email; ?></li>
+                <li>
+                    <?php echo $user_email; ?>
+                </li>
                 <li><img src="images/next.png" width="20px"></li>
                 <div class="dropdown-content">
                     <a href="#">Profile</a>
