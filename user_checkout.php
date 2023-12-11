@@ -179,29 +179,28 @@
                         </div>
                     </td>
             </tr>
-        </tr>
-        <tr>
-            <td>7</td>
-            <td>
-                <img src="./images/man.png" alt="pfp" class="img7">
-                <span>Angel</span>
-            </td>
-            <td>I love George</td>
-            <td>11/18/23</td>
-            <td>11/20/23</td>
-             <div class="button">
+            </tr>
+            <tr>
+                <td>7</td>
                 <td>
-                    <div class="button">
-                        <div>
-                            <img src="./images/store.png" alt="store" width="30px">
-                            <p>Store</p>
-                        </div>
-                        <div>
-                            <img src="./images/delete.png" alt="delete" width="30px">
-                            <p>Delete</p>
-                        </div>
-                    </div>
+                    <img src="./images/man.png" alt="pfp" class="img7">
+                    <span>Angel</span>
                 </td>
+                <td>I love George</td>
+                <td>11/18/23</td>
+                <td>11/20/23</td>
+                <div class="button">
+                    <td>
+                        <div class="button">
+                            <div>
+                                <img src="./images/delete.png" alt="delete" width="30px">
+                                <p>Delete</p>
+                            </div>
+                            <div>
+                                <input type="checkbox">
+                            </div>
+                        </div>
+                    </td>
             </tr>
             </tr>
             <tr>
