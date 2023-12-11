@@ -71,7 +71,7 @@
         <div style="display:flex;gap:1rem;align-items:center;margin-right: 40px;">
             <li><img src="images/bell-ring.png" width="30px" style="margin-top: 5px;"></li>
             <!-- Display the user's email here -->
-            <div class="dropdown">
+            <div class="dropdown" style="display: flex; gap:0.5rem">
                 <li><?php echo $user_email; ?></li>
                 <li><img src="images/next.png" width="20px"></li>
                 <div class="dropdown-content">
