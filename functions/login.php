@@ -44,33 +44,33 @@ if (isset($_POST['login'])) {
                 switch ($role) {
                     case 'admin':
                         mysqli_close($conn);
-                        header('Location: /Project-Name/admin_dashboard.php');
+                        header('Location: ../admin_dashboard.php');
                         exit();
                     case 'librarian':
                         mysqli_close($conn);
-                        header('Location: /Project-Name/librarian_dashboard.php');
+                        header('Location: ../librarian_dashboard.php');
                         exit();
                     default:
                         mysqli_close($conn);
-                        header('Location: /Project-Name/user_dashboard.php');
+                        header('Location: ../user_dashboard.php');
                         exit();
                 }
             } else {
                 $_SESSION['login_error'] = 'Incorrect password.';
                 mysqli_close($conn);
-                header('Location: /Project-Name/login_page.php');
+                header('Location: ../login_page.php');
                 exit();
             }
         } else {
             $_SESSION['login_error'] = 'User not found.';
             mysqli_close($conn);
-            header('Location: /Project-Name/login_page.php');
+            header('Location: ../login_page.php');
             exit();
         }
     } else {
         $_SESSION['login_error'] = 'Incorrect CAPTCHA code.';
         mysqli_close($conn);
-        header('Location: /Project-Name/login_page.php');
+        header('Location: ../login_page.php');
         exit();
     }
 }

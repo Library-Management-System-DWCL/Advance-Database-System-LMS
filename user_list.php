@@ -1,8 +1,21 @@
 <?php
+session_start();
+
 include 'functions/connection.php';
+
+$email = isset($_SESSION['email']) ? $_SESSION['email'] : null;
+$role = isset($_SESSION['role']) ? $_SESSION['role'] : null;
+
+if ($role !== 'admin') {
+    header('Location: user_dashboard.php');
+    exit();
+}
 
 $query = "SELECT * FROM users";
 $result = mysqli_query($conn, $query);
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -29,7 +42,7 @@ $result = mysqli_query($conn, $query);
         <div style="display:flex;gap:1rem;align-items:center;margin-right: 40px;">
             <li><img src="images/bell-ring.png" alt="bell" width="30px" style="margin-top: 5px;"></li>
             <li><img src="./images/user.png" alt="user" width="40px" style="margin-top: 5px;"></li>
-            <li>07108487@dwc-legazpi.edu</li>
+            <li><?php echo $email; ?></li>
             <li><img src="images/next.png" alt="next" width="20px"></li>
         </div>
     </div>

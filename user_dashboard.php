@@ -1,3 +1,30 @@
+<?php
+session_start(); // Start the session
+
+include 'functions/connection.php';
+
+// Check if 'loggedin' is not set or is false, redirect to login page
+if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin']) {
+    header('Location: login_page.php');
+    exit();
+}
+
+// Check if 'role' is not set, redirect to login page
+if (!isset($_SESSION['role'])) {
+    header('Location: login_page.php');
+    exit();
+}
+
+$role = $_SESSION['role'];
+$email = $_SESSION['email'];
+
+// If the role is 'admin', redirect to admin dashboard
+if ($role === 'admin') {
+    header('Location: admin_dashboard.php');
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,10 +44,9 @@
 
         .dropdown-content {
             display: none;
-            top: 1.5rem;
             position: absolute;
             background-color: #f9f9f9;
-            /* min-width: 160px; */
+            min-width: 160px;
             box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
             z-index: 1;
         }
@@ -43,33 +69,6 @@
 </head>
 
 <body>
-    <?php
-    session_start();
-
-    // Check if the user is not logged in
-    if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
-        header('Location: ../login_page.php');
-        exit();
-    }
-
-    // Retrieve other user information from the session
-    $user_email = $_SESSION['email'];
-    $role = $_SESSION['role'];
-
-    switch ($role) {
-        case 'admin':
-            header('Location: ../admin_dashboard.php');
-            break;
-        case 'librarian':
-            header('Location: ../librarian_dashboard.php');
-            break;
-        default:
-            header('Location: ../user_dashboard.php');
-            break;
-    }
-    exit();
-    ?>
-
     <div class="container">
         <div class="logo">
             <div style="display: flex;align-items: center;">
@@ -85,10 +84,8 @@
         <div style="display:flex;gap:1rem;align-items:center;margin-right: 40px;">
             <li><img src="images/bell-ring.png" width="30px" style="margin-top: 5px;"></li>
             <!-- Display the user's email here -->
-            <div class="dropdown" style="display: flex; gap:0.5rem">
-                <li>
-                    <?php echo $user_email; ?>
-                </li>
+            <div class="dropdown">
+                <li><?php echo $email; ?></li>
                 <li><img src="images/next.png" width="20px"></li>
                 <div class="dropdown-content">
                     <a href="#">Profile</a>
@@ -114,15 +111,6 @@
             <div><img src="images/wishlist_1.png" alt=""></div>
         </div>
     </div>
-
-    <!-- <div class="box1">
-        <div class="tangle">
-            <div class="image">
-                <img class="stack-of-books" src="images/stack-of-books.png" />
-            </div>
-        </div>
-    </div> -->
-    
 </body>
 
 </html>
