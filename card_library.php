@@ -65,8 +65,24 @@
                     <label>EXP DATE</label>
                     <input type="text" name="student_name" placeholder="Enter Your Name" required>
                 </div>
+                <div class="line" style="position: relative; margin-left: 2rem; margin-bottom:5rem;">
+                <button class="btn profile-edit-btn" style="position: relative; padding: 77px 3px;">
+                    <label for="file-upload" class="custom-file-upload" style="font-size: 44px; padding: 30px;">
+                        Add Photo
+                    </label>
+                    <input id="file-upload" type="file" style="display: none;" />
+                    </button>
+                </div>
             </div>
             </form>
+    </div>
+    <div class="line" style="position: relative;margin-left: 70rem; margin-top: 2rem;">
+        <button class="btn cancel-btn">
+            Cancel
+        </button>
+        <button class="btn save-btn">
+            Save
+        </button>
     </div>
     </div>
 </body>

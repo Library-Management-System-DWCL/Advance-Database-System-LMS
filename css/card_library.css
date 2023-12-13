@@ -177,3 +177,25 @@ input{
     justify-content: space-between;
     gap: 1rem;
 }
+.custom-file-upload {
+    padding: 10px;
+
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .btn {
+    padding: 10px 20px; /* Adjust the padding values as needed */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cancel-btn {
+    background-color: red;
+    color: white;
+}
+
+.save-btn {
+    background-color: blue;
+    color: white;
+}
