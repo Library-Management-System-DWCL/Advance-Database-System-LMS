@@ -122,10 +122,8 @@ if (!isset($_SESSION['role'])) {
       <div>
         <p>THE KNOWLEDGE GAP by NATALIE WEXLER</p>
         <div class="button">
-          <button>
-            Borrow
-          </button>
-          <button>Reserve</button>
+        <button class="borrow-btn" data-book-id="2">Borrow</button>
+        <button>Reserve</button>
         </div>
       </div>
     </div>
@@ -137,8 +135,8 @@ if (!isset($_SESSION['role'])) {
       <div>
         <p>THE LIGHTNING THIEF by RICK RIORDAN</p>
         <div class="button">
-          <button>Borrow</button>
-          <button>Reserve</button>
+        <button class="borrow-btn" data-book-id="3">Borrow</button>
+        <button>Reserve</button>
         </div>
       </div>
     </div>
@@ -150,8 +148,8 @@ if (!isset($_SESSION['role'])) {
       <div>
         <p>THINKING LIKE A LAWYER by COLIN SEALE</p>
         <div class="button">
-          <button>Borrow</button>
-          <button>Reserve</button>
+        <button class="borrow-btn" data-book-id="4">Borrow</button>
+        <button>Reserve</button>
         </div>
       </div>
     </div>
@@ -163,8 +161,8 @@ if (!isset($_SESSION['role'])) {
       <div>
         <p>HOW CHILDREN SUCCEED by PAUL TOUGH</p>
         <div class="button">
-          <button>Borrow</button>
-          <button>Reserve</button>
+        <button class="borrow-btn" data-book-id="5">Borrow</button>
+        <button>Reserve</button>
         </div>
       </div>
     </div>
@@ -176,8 +174,8 @@ if (!isset($_SESSION['role'])) {
       <div>
         <p>HARRY POTTER AND THE SORCERERS STONE by J.K ROWLING</p>
         <div class="button">
-          <button>Borrow</button>
-          <button>Reserve</button>
+        <button class="borrow-btn" data-book-id="6">Borrow</button>
+        <button>Reserve</button>
         </div>
       </div>
     </div>
@@ -189,8 +187,8 @@ if (!isset($_SESSION['role'])) {
       <div>
         <p>THE POWER OF HABIT by CHARLES DUHIGG</p>
         <div class="button">
-          <button>Borrow</button>
-          <button>Reserve</button>
+        <button class="borrow-btn" data-book-id="7">Borrow</button>
+        <button>Reserve</button>
         </div>
       </div>
     </div>
@@ -202,8 +200,8 @@ if (!isset($_SESSION['role'])) {
       <div>
         <p>START HERE START NOW by LIZ KLEINROCK</p>
         <div class="button">
-          <button>Borrow</button>
-          <button>Reserve</button>
+        <button class="borrow-btn" data-book-id="8">Borrow</button>
+        <button>Reserve</button>
         </div>
       </div>
     </div>
