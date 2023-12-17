@@ -73,9 +73,9 @@ $result = mysqli_query($conn, $query);
             <?php while ($row = mysqli_fetch_assoc($result)) : ?>
             <tr>
                 <td><?php echo $row['checkoutID']; ?></td>
-                <td>
+                <td style="gap:0.5rem">
                     <img src="./images/man.png" alt="pfp" class="img1">
-                    <span> <?php echo $row['email']; ?>
+                    <span style="align-items:center;display:flex;"><?php echo $row['email']; ?>
                     </span>
                 </td>
                 <td><?php echo $row['book_name']; ?></td>

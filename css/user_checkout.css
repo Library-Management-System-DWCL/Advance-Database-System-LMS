@@ -114,8 +114,8 @@ body{
     text-align: center;
   }
   .table span{
-    margin-left: 10px;
-    margin-top: 18px;
+    /* margin-left: 10px;
+    margin-top: 18px; */
   }
   .table tr td .img1,
   .img2,

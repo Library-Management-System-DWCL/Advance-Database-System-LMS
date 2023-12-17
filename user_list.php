@@ -62,13 +62,13 @@ $result = mysqli_query($conn, $query);
                 <th>Date Return</th>
                 <th>Action</th>
             </tr>
-            <?php while ($row = mysqli_fetch_assoc($result)): ?>
+            <?php while ($row = mysqli_fetch_assoc($result)) : ?>
                 <tr>
                     <td>
                         <?php echo $row['user_id']; ?>
                     </td>
                     <td>
-                        <span style="text-align: left;width: 60%;display:flex;align-items:center;gap: 0.5rem;">
+                        <span style="width: 100%;display: flex;align-items: center;gap: 0.5rem;height: 100%;">
                             <img src="./images/man.png" alt="pfp" class="img1">
                             <span>
                                 <?php echo $row['email']; ?>
@@ -88,8 +88,7 @@ $result = mysqli_query($conn, $query);
                                 <!-- <a href="functions/delete_user.php?user_id=<?php echo $row['user_id']; ?>">
                                     <img src="./images/delete.png" alt="delete" width="30px">
                                 </a> -->
-                                <a href="functions/delete_user.php?user_id=<?php echo $row['user_id']; ?>"
-                                    onclick="return confirm('Are you sure you want to delete this user? click yes to continue')">
+                                <a href="functions/delete_user.php?user_id=<?php echo $row['user_id']; ?>" onclick="return confirm('Are you sure you want to delete this user? click yes to continue')">
                                     <img src="./images/delete.png" alt="delete" width="30px">
                                 </a>
                                 <p>Delete</p>
