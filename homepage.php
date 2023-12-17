@@ -3,8 +3,17 @@ session_start();
 
 include 'functions/connection.php';
 
-$email = isset($_SESSION['email']) ? $_SESSION['email'] : null;
-$role = isset($_SESSION['role']) ? $_SESSION['role'] : null;
+// Check if 'loggedin' is not set or is false, redirect to login page
+if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin']) {
+  header('Location: login_page.php');
+  exit();
+}
+
+// Check if 'role' is not set, redirect to login page
+if (!isset($_SESSION['role'])) {
+  header('Location: login_page.php');
+  exit();
+}
 
 ?>
 
@@ -49,7 +58,7 @@ $role = isset($_SESSION['role']) ? $_SESSION['role'] : null;
           <div class="logout-dropdown" id="logout-dropdown">
             <a href="#" id="logout-link">Profile</a>
             <a href="#" id="logout-link">Settings & Privacy</a>
-            <a href="#" id="logout-link">Logout</a>
+            <a href="functions/logout.php" id="logout-link">Logout</a>
           </div>
         </div>
         <div class="library-card">
@@ -61,31 +70,6 @@ $role = isset($_SESSION['role']) ? $_SESSION['role'] : null;
       </div>
     </div>
   </div>
-  <script>
-    // Add an event listener to the logout icon to toggle the logout dropdown
-    document.getElementById("logout-icon").addEventListener("click", function() {
-      var logoutDropdown = document.getElementById("logout-dropdown");
-      logoutDropdown.style.display = logoutDropdown.style.display === "block" ? "none" : "block";
-    });
-    // Close the logout dropdown if the user clicks outside of it
-    window.addEventListener("click", function(event) {
-      var logoutIcon = document.getElementById("logout-icon");
-      var logoutDropdown = document.getElementById("logout-dropdown");
-      if (!logoutIcon.contains(event.target) && !logoutDropdown.contains(event.target)) {
-        logoutDropdown.style.display = "none";
-      }
-    });
-    // Prevent the document click event from closing the dropdown when the icon is clicked
-    document.getElementById("logout-icon").addEventListener("click", function(event) {
-      event.stopPropagation();
-    });
-    // Add an event listener to the logout link to perform the logout action
-    document.getElementById("logout-link").addEventListener("click", function() {
-      // Add your logout logic here
-      console.log("Logout clicked");
-      // Example: window.location.href = 'logout.php';
-    });
-  </script>
   <div class="nav-bar">
     <ul>
       <li><a href="#">HOME</a></li>
@@ -235,16 +219,14 @@ $role = isset($_SESSION['role']) ? $_SESSION['role'] : null;
   </div>
 
   <script>
-    console.log('Script started'); // This will log a message when the script starts
-
     document.querySelectorAll('.borrow-btn').forEach(function(button) {
       button.addEventListener('click', function(e) {
         var bookId = e.target.getAttribute('data-book-id');
-        // TODO: Get the current user's ID
         var userId = '<?php echo $_SESSION["user_id"]; ?>'; // Replace this with the actual user ID
+
         // Send the AJAX request
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'checkout.php', true);
+        xhr.open('POST', 'functions/checkout.php', true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.send('book_id=' + encodeURIComponent(bookId) + '&user_id=' + encodeURIComponent(userId));
 
@@ -256,6 +238,30 @@ $role = isset($_SESSION['role']) ? $_SESSION['role'] : null;
           }
         };
       });
+    });
+
+    // Add an event listener to the logout icon to toggle the logout dropdown
+    document.getElementById("logout-icon").addEventListener("click", function() {
+      var logoutDropdown = document.getElementById("logout-dropdown");
+      logoutDropdown.style.display = logoutDropdown.style.display === "block" ? "none" : "block";
+    });
+    // Close the logout dropdown if the user clicks outside of it
+    window.addEventListener("click", function(event) {
+      var logoutIcon = document.getElementById("logout-icon");
+      var logoutDropdown = document.getElementById("logout-dropdown");
+      if (!logoutIcon.contains(event.target) && !logoutDropdown.contains(event.target)) {
+        logoutDropdown.style.display = "none";
+      }
+    });
+    // Prevent the document click event from closing the dropdown when the icon is clicked
+    document.getElementById("logout-icon").addEventListener("click", function(event) {
+      event.stopPropagation();
+    });
+    // Add an event listener to the logout link to perform the logout action
+    document.getElementById("logout-link").addEventListener("click", function() {
+      // Add your logout logic here
+      console.log("Logout clicked");
+      // Example: window.location.href = 'logout.php';
     });
   </script>
 
