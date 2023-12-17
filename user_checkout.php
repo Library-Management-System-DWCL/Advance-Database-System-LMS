@@ -1,3 +1,27 @@
+<?php
+session_start();
+
+include 'functions/connection.php';
+
+$email = isset($_SESSION['email']) ? $_SESSION['email'] : null;
+$role = isset($_SESSION['role']) ? $_SESSION['role'] : null;
+
+if ($role !== 'admin') {
+    header('Location: user_dashboard.php');
+    exit();
+}
+
+$query = "SELECT checkout.*, users.email, books.book_name 
+FROM checkout 
+JOIN users 
+ON checkout.user_id = users.user_id
+JOIN books
+ON checkout.bookID = books.bookID";
+$result = mysqli_query($conn, $query);
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,15 +70,17 @@
                 <th>Date Return</th>
                 <th>Action</th>
             </tr>
+            <?php while ($row = mysqli_fetch_assoc($result)) : ?>
             <tr>
-                <td>1</td>
+                <td><?php echo $row['checkoutID']; ?></td>
                 <td>
                     <img src="./images/man.png" alt="pfp" class="img1">
-                    <span>Jade Raposa</span>
+                    <span> <?php echo $row['email']; ?>
+                    </span>
                 </td>
-                <td>The School of Life</td>
-                <td>11/18/23</td>
-                <td>11/20/23</td>
+                <td><?php echo $row['book_name']; ?></td>
+                <td><?php echo $row['checkout_date']; ?></td>
+                <td></td>
                 <div class="button">
                     <td>
                         <div class="button">
@@ -68,213 +94,7 @@
                         </div>
                     </td>
             </tr>
-            <tr>
-                <td>2</td>
-                <td>
-                    <img src="./images/man.png" alt="pfp" class="img2">
-                    <span>Christian Montesor</span>
-                </td>
-                <td>The School of Life</td>
-                <td>11/18/23</td>
-                <td>11/20/23</td>
-                <div class="button">
-                    <td>
-                        <div class="button">
-                            <div>
-                                <img src="./images/delete.png" alt="delete" width="30px">
-                                <p>Delete</p>
-                            </div>
-                            <div>
-                                <input type="checkbox">
-                            </div>
-                        </div>
-                    </td>
-            </tr>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>
-                    <img src="./images/man.png" alt="pfp" class="img3">
-                    <span>John Raven</span>
-                </td>
-                <td>The School of Life</td>
-                <td>11/18/23</td>
-                <td>11/20/23</td>
-                <div class="button">
-                    <td>
-                        <div class="button">
-                            <div>
-                                <img src="./images/delete.png" alt="delete" width="30px">
-                                <p>Delete</p>
-                            </div>
-                            <div>
-                                <input type="checkbox">
-                            </div>
-                        </div>
-                    </td>
-            </tr>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>
-                    <img src="./images/man.png" alt="pfp" class="img4">
-                    <span>George Literal</span>
-                </td>
-                <td>The School of Life</td>
-                <td>11/18/23</td>
-                <td>11/20/23</td>
-                <div class="button">
-                    <td>
-                        <div class="button">
-                            <div>
-                                <img src="./images/delete.png" alt="delete" width="30px">
-                                <p>Delete</p>
-                            </div>
-                            <div>
-                                <input type="checkbox">
-                            </div>
-                        </div>
-                    </td>
-            </tr>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td>
-                    <img src="./images/man.png" alt="pfp" class="img5">
-                    <span>Leah Jimenez</span>
-                </td>
-                <td>The School of Life</td>
-                <td>11/18/23</td>
-                <td>11/20/23</td>
-                <div class="button">
-                    <td>
-                        <div class="button">
-                            <div>
-                                <img src="./images/delete.png" alt="delete" width="30px">
-                                <p>Delete</p>
-                            </div>
-                            <div>
-                                <input type="checkbox">
-                            </div>
-                        </div>
-                    </td>
-            </tr>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>
-                    <img src="./images/man.png" alt="pfp" class="img6">
-                    <span>Ian Bueno</span>
-                </td>
-                <td>The School of Life</td>
-                <td>11/18/23</td>
-                <td>11/20/23</td>
-                <div class="button">
-                    <td>
-                        <div class="button">
-                            <div>
-                                <img src="./images/delete.png" alt="delete" width="30px">
-                                <p>Delete</p>
-                            </div>
-                            <div>
-                                <input type="checkbox">
-                            </div>
-                        </div>
-                    </td>
-            </tr>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>
-                    <img src="./images/man.png" alt="pfp" class="img7">
-                    <span>Angel</span>
-                </td>
-                <td>I love George</td>
-                <td>11/18/23</td>
-                <td>11/20/23</td>
-                <div class="button">
-                    <td>
-                        <div class="button">
-                            <div>
-                                <img src="./images/delete.png" alt="delete" width="30px">
-                                <p>Delete</p>
-                            </div>
-                            <div>
-                                <input type="checkbox">
-                            </div>
-                        </div>
-                    </td>
-            </tr>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td>
-                    <img src="./images/man.png" alt="pfp" class="img8">
-                    <span>Christian Montesor</span>
-                </td>
-                <td>The School of Life</td>
-                <td>11/18/23</td>
-                <td>11/20/23</td>
-                <div class="button">
-                    <td>
-                        <div class="button">
-                            <div>
-                                <img src="./images/delete.png" alt="delete" width="30px">
-                                <p>Delete</p>
-                            </div>
-                            <div>
-                                <input type="checkbox">
-                            </div>
-                        </div>
-                    </td>
-            </tr>
-            </tr>
-            <tr>
-                <td>9</td>
-                <td>
-                    <img src="./images/man.png" alt="pfp" class="img9">
-                    <span>Christian Montesor</span>
-                </td>
-                <td>The School of Life</td>
-                <td>11/18/23</td>
-                <td>11/20/23</td>
-                <div class="button">
-                    <td>
-                        <div class="button">
-                            <div>
-                                <img src="./images/delete.png" alt="delete" width="30px">
-                                <p>Delete</p>
-                            </div>
-                            <div>
-                                <input type="checkbox">
-                            </div>
-                        </div>
-                    </td>
-            </tr>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td>
-                    <img src="./images/man.png" alt="pfp" class="img10">
-                    <span>Christian Montesor</span>
-                </td>
-                <td>The School of Life</td>
-                <td>11/18/23</td>
-                <td>11/20/23</td>
-                <div class="button">
-                    <td>
-                        <div class="button">
-                            <div>
-                                <img src="./images/delete.png" alt="delete" width="30px">
-                                <p>Delete</p>
-                            </div>
-                            <div>
-                                <input type="checkbox">
-                            </div>
-                        </div>
-                    </td>
-            </tr>
-            </tr>
+            <?php endwhile; ?>
         </table>
     </div>
 
