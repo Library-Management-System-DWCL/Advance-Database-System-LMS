@@ -77,7 +77,7 @@ if ($role === 'admin') {
             </div>
         </div>
         <div class="logo2">
-            <li>LIBRARY HOMEPAGE</li>
+            <li><button onclick="location.href='homepage.php'">LIBRARY HOMEPAGE</button></li>
             <li>DATABASES A-TO-Z</li>
             <li>HELP</li>
         </div>

@@ -38,7 +38,8 @@ if (isset($_POST['login'])) {
                 // Store user information in the session
                 $_SESSION['email'] = $user['email'];
                 $_SESSION['role'] = $role;
-                $_SESSION['logged_in'] = true; // Set the session variable for login
+                $_SESSION['user_id'] = $user['user_id']; // Add this line
+                $_SESSION['loggedin'] = true; // Set the session variable for login
 
                 $_SESSION['loggedin'] = true;
 
