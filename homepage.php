@@ -2,6 +2,8 @@
 session_start();
 
 include 'functions/connection.php';
+$email = isset($_SESSION['email']) ? $_SESSION['email'] : null;
+$role = isset($_SESSION['role']) ? $_SESSION['role'] : null;
 
 // Check if 'loggedin' is not set or is false, redirect to login page
 if (!isset($_SESSION['loggedin']) || !$_SESSION['loggedin']) {
@@ -15,6 +17,10 @@ if (!isset($_SESSION['role'])) {
   exit();
 }
 
+if ($role !== 'user') {
+    header('Location: admin_dashboard.php');
+    exit();
+}
 ?>
 
 

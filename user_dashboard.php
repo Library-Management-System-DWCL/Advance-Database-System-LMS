@@ -23,6 +23,7 @@ if ($role === 'admin') {
     header('Location: admin_dashboard.php');
     exit();
 }
+
 ?>
 
 <!DOCTYPE html>
