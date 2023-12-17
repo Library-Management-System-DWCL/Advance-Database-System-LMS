@@ -1,6 +1,8 @@
 <?php
 session_start(); // Start the session
 
+include 'connection.php';
+
 // Verify CAPTCHA
 if (isset($_POST['login'])) {
     $userCaptcha = $_POST['captcha_input'];
@@ -9,7 +11,6 @@ if (isset($_POST['login'])) {
     // Check if the entered CAPTCHA matches the stored value
     if ($userCaptcha === $captchaCode) {
         // CAPTCHA is correct, continue with login verification
-        include 'connection.php';
 
         // Check if the connection was successful
         if (!$conn) {
@@ -56,21 +57,22 @@ if (isset($_POST['login'])) {
                         exit();
                 }
             } else {
-                $_SESSION['login_error'] = 'Incorrect password.';
+                $_SESSION['login_error'] = 'Wrong Email/Password';
                 mysqli_close($conn);
                 header('Location: ../login_page.php');
                 exit();
             }
         } else {
-            $_SESSION['login_error'] = 'User not found.';
+            $_SESSION['login_error'] = 'User is not registered';
             mysqli_close($conn);
             header('Location: ../login_page.php');
             exit();
         }
     } else {
-        $_SESSION['login_error'] = 'Incorrect CAPTCHA code.';
+        $_SESSION['login_error'] = 'Wrong Captcha';
         mysqli_close($conn);
         header('Location: ../login_page.php');
         exit();
     }
 }
+?>

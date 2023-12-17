@@ -1,6 +1,12 @@
 <?php
 session_start();
 
+// Display the error message if it exists
+if (isset($_SESSION['login_error'])) {
+    echo "<script>alert('" . $_SESSION['login_error'] . "');</script>";
+    unset($_SESSION['login_error']); // remove the error message from the session
+}
+
 // If the user is already logged in, redirect them to the dashboard
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
     header('Location: user_dashboard.php');
