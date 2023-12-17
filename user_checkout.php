@@ -279,12 +279,30 @@
     </div>
 
     <script>
+        document.querySelector('.del-butt button').addEventListener('click', function () {
+            var confirmation = confirm('Are you sure you want to delete all selected items?');
+            if (confirmation) {
+                // Perform delete all operation
+            }
+        });
+
         document.querySelector('.selectall button').addEventListener('click', function () {
             var checkboxes = document.querySelectorAll('input[type="checkbox"]');
             var allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
             for (var i = 0; i < checkboxes.length; i++) {
                 checkboxes[i].checked = !allChecked;
             }
+        });
+
+        var deleteButtons = document.querySelectorAll('.button img');
+        deleteButtons.forEach(function (button) {
+            button.addEventListener('click', function (e) {
+                e.preventDefault();
+                var confirmation = confirm('Are you sure you want to delete this item?');
+                if (confirmation) {
+                    // Perform delete operation
+                }
+            });
         });
     </script>
 </body>

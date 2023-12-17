@@ -42,7 +42,9 @@ $result = mysqli_query($conn, $query);
         <div style="display:flex;gap:1rem;align-items:center;margin-right: 40px;">
             <li><img src="images/bell-ring.png" alt="bell" width="30px" style="margin-top: 5px;"></li>
             <li><img src="./images/user.png" alt="user" width="40px" style="margin-top: 5px;"></li>
-            <li><?php echo $email; ?></li>
+            <li>
+                <?php echo $email; ?>
+            </li>
             <li><img src="images/next.png" alt="next" width="20px"></li>
         </div>
     </div>
@@ -60,7 +62,7 @@ $result = mysqli_query($conn, $query);
                 <th>Date Return</th>
                 <th>Action</th>
             </tr>
-            <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+            <?php while ($row = mysqli_fetch_assoc($result)): ?>
                 <tr>
                     <td>
                         <?php echo $row['user_id']; ?>
@@ -80,10 +82,14 @@ $result = mysqli_query($conn, $query);
                         <div class="button">
                             <div>
                                 <img src="./images/store.png" alt="store" width="30px">
-                                <p>Store</p>
+                                <p>Edit</p>
                             </div>
                             <div>
-                                <a href="functions/delete_user.php?user_id=<?php echo $row['user_id']; ?>">
+                                <!-- <a href="functions/delete_user.php?user_id=<?php echo $row['user_id']; ?>">
+                                    <img src="./images/delete.png" alt="delete" width="30px">
+                                </a> -->
+                                <a href="functions/delete_user.php?user_id=<?php echo $row['user_id']; ?>"
+                                    onclick="return confirm('Are you sure you want to delete this user? click yes to continue')">
                                     <img src="./images/delete.png" alt="delete" width="30px">
                                 </a>
                                 <p>Delete</p>
