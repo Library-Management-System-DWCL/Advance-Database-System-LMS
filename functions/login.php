@@ -20,6 +20,25 @@ if (isset($_POST['login'])) {
         $email = $_POST['email'];
         $password = $_POST['password'];
 
+        // Check if the user has exceeded the maximum login attempts
+        if (isset($_SESSION['login_attempts']) && $_SESSION['login_attempts'] >= 3) {
+            $lastFailedAttempt = $_SESSION['last_failed_attempt'];
+            $timeSinceLastAttempt = time() - $lastFailedAttempt;
+
+            // Check if the 10-second cooldown has passed
+            if ($timeSinceLastAttempt < 10) {
+                $timeRemaining = 10 - $timeSinceLastAttempt;
+                $_SESSION['login_error'] = 'Login attempts exceeded. Please try again in ' . $timeRemaining . ' seconds.';
+                mysqli_close($conn);
+                header('Location: ../login_page.php');
+                exit();
+            } else {
+                // Reset login attempts after the cooldown period
+                unset($_SESSION['login_attempts']);
+                unset($_SESSION['last_failed_attempt']);
+            }
+        }
+
         $query = "SELECT * FROM users WHERE email=?";
         $statement = mysqli_prepare($conn, $query);
         mysqli_stmt_bind_param($statement, "s", $email);
@@ -32,18 +51,17 @@ if (isset($_POST['login'])) {
             if (password_verify($password, $user['password'])) {
                 // Correct credentials, log in the user
 
-                // Retrieve additional information from the user record (e.g., role)
-                $role = $user['user_access'];
+                // Reset login attempts on successful login
+                unset($_SESSION['login_attempts']);
+                unset($_SESSION['last_failed_attempt']);
 
                 // Store user information in the session
                 $_SESSION['email'] = $user['email'];
-                $_SESSION['role'] = $role;
-                $_SESSION['user_id'] = $user['user_id']; // Add this line
+                $_SESSION['role'] = $user['user_access'];
+                $_SESSION['user_id'] = $user['user_id'];
                 $_SESSION['loggedin'] = true; // Set the session variable for login
 
-                $_SESSION['loggedin'] = true;
-
-                switch ($role) {
+                switch ($_SESSION['role']) {
                     case 'admin':
                         mysqli_close($conn);
                         header('Location: ../admin_dashboard.php');
@@ -58,7 +76,16 @@ if (isset($_POST['login'])) {
                         exit();
                 }
             } else {
-                $_SESSION['login_error'] = 'Wrong Email/Password';
+                // Incorrect password, update login attempts
+                if (!isset($_SESSION['login_attempts'])) {
+                    $_SESSION['login_attempts'] = 1;
+                } else {
+                    $_SESSION['login_attempts']++;
+                }
+
+                $_SESSION['last_failed_attempt'] = time();
+
+                $_SESSION['login_error'] = 'Wrong Email/Password. Attempts remaining: ' . (3 - $_SESSION['login_attempts']);
                 mysqli_close($conn);
                 header('Location: ../login_page.php');
                 exit();
