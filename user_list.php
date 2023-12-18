@@ -40,9 +40,10 @@ $result = mysqli_query($conn, $query);
             </div>
         </div>
         <div class="logo2">
-        <li> <button onclick="location.href='homepage.php'">ADMIN DASHBOARD </button></li>
+            <li> <button onclick="location.href='homepage.php'">ADMIN DASHBOARD </button></li>
             <li> <button onclick="location.href='user_list.php'">USER LIST <button></li>
-            <li> <button onclick="location.href='user_checkout.php'">USER CHECKOUTS </></li>
+            <li> <button onclick="location.href='user_checkout.php'">USER CHECKOUTS </>
+            </li>
         </div>
         <div style="display:flex;gap:1rem;align-items:center;margin-right: 40px;">
             <li><img src="images/bell-ring.png" alt="bell" width="30px" style="margin-top: 5px;"></li>
@@ -62,12 +63,10 @@ $result = mysqli_query($conn, $query);
             <tr>
                 <th>#</th>
                 <th>Email</th>
-                <th>Book Title</th>
-                <th>Date Borrow</th>
-                <th>Date Return</th>
+                <th>Role</th>
                 <th>Action</th>
             </tr>
-            <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+            <?php while ($row = mysqli_fetch_assoc($result)): ?>
                 <tr>
                     <td>
                         <?php echo $row['user_id']; ?>
@@ -80,9 +79,9 @@ $result = mysqli_query($conn, $query);
                             </span>
                         </span>
                     </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td>
+                        <?php echo $row['user_access']; ?>
+                    </td>
                     <td>
                         <div class="button">
                             <div>
@@ -93,7 +92,8 @@ $result = mysqli_query($conn, $query);
                                 <!-- <a href="functions/delete_user.php?user_id=<?php echo $row['user_id']; ?>">
                                     <img src="./images/delete.png" alt="delete" width="30px">
                                 </a> -->
-                                <a href="functions/delete_user.php?user_id=<?php echo $row['user_id']; ?>" onclick="return confirm('Are you sure you want to delete this user? click yes to continue')">
+                                <a href="functions/delete_user.php?user_id=<?php echo $row['user_id']; ?>"
+                                    onclick="return confirm('Are you sure you want to delete this user? click yes to continue')">
                                     <img src="./images/delete.png" alt="delete" width="30px">
                                 </a>
                                 <p>Delete</p>

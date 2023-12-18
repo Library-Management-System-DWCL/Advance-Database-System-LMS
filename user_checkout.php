@@ -44,9 +44,10 @@ $result = mysqli_query($conn, $query);
             </div>
         </div>
         <div class="logo2">
-        <li> <button onclick="location.href='homepage.php'">ADMIN DASHBOARD </button></li>
+            <li> <button onclick="location.href='homepage.php'">ADMIN DASHBOARD </button></li>
             <li> <button onclick="location.href='user_list.php'">USER LIST <button></li>
-            <li> <button onclick="location.href='user_checkout.php'">USER CHECKOUTS </></li>
+            <li> <button onclick="location.href='user_checkout.php'">USER CHECKOUTS </>
+            </li>
         </div>
         <div style="display:flex;gap:1rem;align-items:center;margin-right: 40px;">
             <li><img src="images/bell-ring.png" alt="bell" width="30px" style="margin-top: 5px;"></li>
@@ -71,34 +72,41 @@ $result = mysqli_query($conn, $query);
                 <th>#</th>
                 <th>Name</th>
                 <th>Book Title</th>
-                <th>Date Borrow</th>
-                <th>Date Return</th>
+                <th>Date Borrowed</th>
                 <th>Action</th>
             </tr>
-            <?php while ($row = mysqli_fetch_assoc($result)) : ?>
-            <tr>
-                <td><?php echo $row['checkoutID']; ?></td>
-                <td style="gap:0.5rem">
-                    <img src="./images/man.png" alt="pfp" class="img1">
-                    <span style="align-items:center;display:flex;"><?php echo $row['email']; ?>
-                    </span>
-                </td>
-                <td><?php echo $row['book_name']; ?></td>
-                <td><?php echo $row['checkout_date']; ?></td>
-                <td></td>
-                <div class="button">
+            <?php while ($row = mysqli_fetch_assoc($result)): ?>
+                <tr>
                     <td>
-                        <div class="button">
-                            <div>
-                                <img src="./images/delete.png" alt="delete" width="30px">
-                                <p>Delete</p>
-                            </div>
-                            <div>
-                                <input type="checkbox">
-                            </div>
-                        </div>
+                        <?php echo $row['checkoutID']; ?>
                     </td>
-            </tr>
+                    <td style="gap:0.5rem">
+                        <img src="./images/man.png" alt="pfp" class="img1">
+                        <span style="align-items:center;display:flex;">
+                            <?php echo $row['email']; ?>
+                        </span>
+                    </td>
+                    <td>
+                        <?php echo $row['book_name']; ?>
+                    </td>
+                    <td>
+                        <?php echo $row['checkout_date']; ?>
+                    </td>
+                    <div class="button">
+                        <td>
+                            <div class="button">
+                                <div>
+                                    <a href="functions/delete_checkout.php?id=<?php echo $row['checkoutID']; ?>"
+                                        onclick="return confirm('Are you sure you want to delete this user? click yes to continue')">
+                                        <img src="./images/delete.png" alt="delete" width="30px">
+                                    </a>
+                                </div>
+                                <div>
+                                    <input type="checkbox">
+                                </div>
+                            </div>
+                        </td>
+                </tr>
             <?php endwhile; ?>
         </table>
     </div>
@@ -117,17 +125,6 @@ $result = mysqli_query($conn, $query);
             for (var i = 0; i < checkboxes.length; i++) {
                 checkboxes[i].checked = !allChecked;
             }
-        });
-
-        var deleteButtons = document.querySelectorAll('.button img');
-        deleteButtons.forEach(function (button) {
-            button.addEventListener('click', function (e) {
-                e.preventDefault();
-                var confirmation = confirm('Are you sure you want to delete this item?');
-                if (confirmation) {
-                    // Perform delete operation
-                }
-            });
         });
     </script>
 </body>
