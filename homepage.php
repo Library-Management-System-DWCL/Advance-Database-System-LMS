@@ -17,7 +17,7 @@ if (!isset($_SESSION['role'])) {
   exit();
 }
 
-if ($role !== 'user') {
+if ($role !== 'student') {
     header('Location: admin_dashboard.php');
     exit();
 }
@@ -31,51 +31,38 @@ if ($role !== 'user') {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./css/homepage.css" />
+  <link rel="stylesheet" href="./css/user_dashboard.css" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.1/css/all.css" />
   <title>Homepage</title>
 </head>
 
 <body>
   <!-- navbar -->
-  <div class="top-bar">
-    <div class="container">
-      <div class="logo">
-        <div style="display: flex; align-items: center">
-          <img src="./images/logo2.png" alt="logo" width="90px" draggable="false" />
-          <li>LIBRARY MANAGEMENT SYSTEM</li>
+  <div class="container">
+        <div class="logo">
+            <div style="display: flex;align-items: center;">
+                <img src="images/logo2.png" width="90px">
+                <li>LIBRARY MANAGEMENT SYSTEM</li>
+            </div>
         </div>
-      </div>
-
-      <div class="search">
-        <div class="search-container">
-          <input type="search" placeholder="Search..." />
-          <i class="fa-solid fa-magnifying-glass fa-xl" style="color: white; cursor: pointer"></i>
+        <div class="logo2">
+            <li><button onclick="location.href='user_dashboard.php'">USER DASHBOARD</button></li>
+            <li><button onclick="location.href='homepage.php'">BOOKSHELF</button></li>
         </div>
-      </div>
-
-      <div class="user">
-        <div class="user-logo">
-          <img src="./images/user.png" alt="user-logo" draggable="false" style="cursor: pointer" />
-          <label for="username" style="cursor: pointer">
-            <p>57842340@dwc-legazpi.edu</p>
-          </label>
-          &nbsp;
-          <i class="fa-solid fa-circle-chevron-down fa-lg" id="logout-icon" style="color: #910000; cursor: pointer"></i>
-          <div class="logout-dropdown" id="logout-dropdown">
-            <a href="#" id="logout-link">Profile</a>
-            <a href="#" id="logout-link">Settings & Privacy</a>
-            <a href="functions/logout.php" id="logout-link">Logout</a>
-          </div>
+        <div style="display:flex;gap:1rem;align-items:center;margin-right: 40px;">
+            <li><img src="images/bell-ring.png" width="30px" style="margin-top: 5px;"></li>
+            <!-- Display the user's email here -->
+            <div class="dropdown">
+                <li><?php echo $email; ?></li>
+                <li><img src="images/next.png" width="20px"></li>
+                <div class="dropdown-content">
+                    <a href="#">Profile</a>
+                    <a href="#">Settings</a>
+                    <a href="functions/logout.php">Logout</a>
+                </div>
+            </div>
         </div>
-        <div class="library-card">
-          <img src="./images/library-card 1.png" alt="library-card" draggable="false" style="cursor: pointer" />
-          <label for="card-id" style="cursor: pointer">
-            <p>GET A LIBRARY CARD NOW!!</p>
-          </label>
-        </div>
-      </div>
     </div>
-  </div>
   <div class="nav-bar">
     <ul>
       <li><a href="#">HOME</a></li>

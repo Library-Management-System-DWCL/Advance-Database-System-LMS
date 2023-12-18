@@ -78,9 +78,8 @@ if ($role === 'admin') {
             </div>
         </div>
         <div class="logo2">
-            <li><button onclick="location.href='homepage.php'">LIBRARY HOMEPAGE</button></li>
-            <li>DATABASES A-TO-Z</li>
-            <li>HELP</li>
+            <li><button onclick="location.href='user_dashboard.php'">USER DASHBOARD</button></li>
+            <li><button onclick="location.href='homepage.php'">BOOKSHELF</button></li>
         </div>
         <div style="display:flex;gap:1rem;align-items:center;margin-right: 40px;">
             <li><img src="images/bell-ring.png" width="30px" style="margin-top: 5px;"></li>
