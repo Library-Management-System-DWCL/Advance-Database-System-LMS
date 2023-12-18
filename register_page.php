@@ -85,6 +85,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
                 <h2>Password</h2>
                 <input type="password" name="password" id="password" class="email" required>
                 <!-- Password Strength Indicator with Progress Bar -->
+                <!-- Add Confirm Password Field -->
+                <h2>Confirm Password</h2>
+                <input type="password" name="confirm_password" class="email" required><br><br>
                 <div id="password-strength">
                     Password Strength
                     <div id="strength-meter"></div>

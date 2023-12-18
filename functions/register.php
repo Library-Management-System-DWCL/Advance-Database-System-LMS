@@ -4,37 +4,35 @@ include 'connection.php';
 if (isset($_POST['register'])) {
     $email = $_POST['email'];
     $rawPassword = $_POST['password'];
-    $password = password_hash($rawPassword, PASSWORD_DEFAULT);
+    $confirmPassword = $_POST['confirm_password'];
     $userType = $_POST['userType']; // Assuming this corresponds to the role
+
+    // Check if passwords match
+    if ($rawPassword !== $confirmPassword) {
+        echo '<script>alert("Passwords do not match.");';
+        echo 'window.location.href = "../register_page.php";</script>';
+        exit();
+    }
 
     // Calculate password strength
     function checkPasswordStrength($password) {
-        $strength = 0;
+        $hasNumber = preg_match('/[0-9]/', $password);
+        $hasCapital = preg_match('/[A-Z]/', $password);
+        $length = strlen($password);
 
-        if (strlen($password) >= 10) {
-            $strength += 1;
+        if ($hasNumber && $hasCapital && $length >= 10) {
+            return 'Strong';
+        } else {
+            return 'Weak';
         }
-        if (preg_match('/[a-z]/', $password) && preg_match('/[A-Z]/', $password)) {
-            $strength += 1;
-        }
-        if (preg_match('/[0-9]/', $password)) {
-            $strength += 1;
-        }
-
-        return $strength;
     }
 
     // Get password strength as a string
-    $passwordStrength = '';
-    $strength = checkPasswordStrength($rawPassword);
+    $passwordStrength = checkPasswordStrength($rawPassword);
 
-    if ($strength >= 3) {
-        $passwordStrength = 'Strong';
-    } elseif ($strength >= 2) {
-        $passwordStrength = 'Moderate';
-    } else {
-        // Password is weak, prevent registration
-        echo '<script>alert("Password is too weak. Please choose a stronger password.");';
+    if ($passwordStrength === 'Weak') {
+        // Password is weak, show alert and prevent registration
+        echo '<script>alert("Password should include at least one number, one capital letter, and be a minimum of 10 characters long.");';
         echo 'window.location.href = "../register_page.php";</script>';
         exit();
     }

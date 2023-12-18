@@ -41,7 +41,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']) {
             <?php include 'functions/captcha.php'; ?>
 
             <!-- Display the CAPTCHA code to the user -->
-            <h2>Enter the following code: <?php echo $captcha; ?></h2>
+            <h2 style="user-select: none;">Enter the following code: <?php echo $captcha; ?></h2>
             
             <!-- Include the CAPTCHA code as a hidden input field -->
             <input type="hidden" name="captcha_code" value="<?php echo $captcha; ?>">
