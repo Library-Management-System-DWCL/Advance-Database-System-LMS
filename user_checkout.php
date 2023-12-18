@@ -102,7 +102,7 @@ $result = mysqli_query($conn, $query);
                                     </a>
                                 </div>
                                 <div>
-                                    <input type="checkbox">
+                                    <input type="checkbox" class="row-checkbox" value="<?php echo $row['checkoutID']; ?>">
                                 </div>
                             </div>
                         </td>
@@ -113,9 +113,13 @@ $result = mysqli_query($conn, $query);
 
     <script>
         document.querySelector('.del-butt button').addEventListener('click', function () {
-            var confirmation = confirm('Are you sure you want to delete all selected items?');
-            if (confirmation) {
-                // Perform delete all operation
+            var checkboxes = document.querySelectorAll('.row-checkbox:checked');
+            var checkoutIDs = Array.from(checkboxes).map(checkbox => checkbox.value);
+            if (checkoutIDs.length > 0) {
+                var confirmation = confirm('Are you sure you want to delete all selected items?');
+                if (confirmation) {
+                    window.location.href = 'functions/delete_multiple_checkouts.php?ids=' + checkoutIDs.join(',');
+                }
             }
         });
 

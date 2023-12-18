@@ -72,7 +72,7 @@ $result = mysqli_query($conn, $query);
                         <?php echo $row['user_id']; ?>
                     </td>
                     <td>
-                        <span style="width: 100%;display: flex;align-items: center;gap: 0.5rem;height: 100%;">
+                        <span style="width: 100%;display: flex;align-items: center;gap: 0.5rem;height: 33%;">
                             <img src="./images/man.png" alt="pfp" class="img1">
                             <span>
                                 <?php echo $row['email']; ?>
