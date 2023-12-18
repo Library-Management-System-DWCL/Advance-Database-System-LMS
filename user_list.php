@@ -39,6 +39,11 @@ $result = mysqli_query($conn, $query);
                 <li>LIBRARY MANAGEMENT SYSTEM</li>
             </div>
         </div>
+        <div class="logo2">
+        <li> <button onclick="location.href='homepage.php'">ADMIN DASHBOARD </button></li>
+            <li> <button onclick="location.href='user_list.php'">USER LIST <button></li>
+            <li> <button onclick="location.href='user_checkout.php'">USER CHECKOUTS </></li>
+        </div>
         <div style="display:flex;gap:1rem;align-items:center;margin-right: 40px;">
             <li><img src="images/bell-ring.png" alt="bell" width="30px" style="margin-top: 5px;"></li>
             <li><img src="./images/user.png" alt="user" width="40px" style="margin-top: 5px;"></li>
