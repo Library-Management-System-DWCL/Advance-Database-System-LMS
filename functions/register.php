@@ -37,6 +37,9 @@ if (isset($_POST['register'])) {
         exit();
     }
 
+    // Hash the password before storing it
+    $hashedPassword = password_hash($rawPassword, PASSWORD_DEFAULT);
+
     // Check if the email already exists in the database using prepared statement
     $checkQuery = "SELECT * FROM users WHERE email=?";
     $checkStatement = mysqli_prepare($conn, $checkQuery);
@@ -51,7 +54,7 @@ if (isset($_POST['register'])) {
         // Insert the new user only if the email is not already registered using prepared statement
         $insertQuery = "INSERT INTO users (email, password, user_access, password_strength) VALUES (?, ?, ?, ?)";
         $insertStatement = mysqli_prepare($conn, $insertQuery);
-        mysqli_stmt_bind_param($insertStatement, "ssss", $email, $password, $userType, $passwordStrength);
+        mysqli_stmt_bind_param($insertStatement, "ssss", $email, $hashedPassword, $userType, $passwordStrength);
         $insertResult = mysqli_stmt_execute($insertStatement);
 
         if ($insertResult) {
